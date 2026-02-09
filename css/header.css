@@ -79,7 +79,7 @@ img{max-width: 100%; vertical-align: top;}
         .header:hover .logo_hover{
             display: block;
         }
-        /* ----------------------------------------------------- */
+ /* ----------------------------------------------------- */
         /* 메뉴스의 nav */
         .nav{
             background-color: rgb(162, 162, 224);
@@ -216,7 +216,7 @@ img{max-width: 100%; vertical-align: top;}
                                 transform: scaleX(1);
                             }
 
-        /* -------------------------------------------------- */
+/* -------------------------------------------------- */
         /* 아이콘 */
         .icon_wrap{
             background-color: blueviolet;
@@ -234,23 +234,23 @@ img{max-width: 100%; vertical-align: top;}
                 display: flex;
                 align-items: center;
             }
-            /*언어*/
-                .lang_ul{
-                    position: absolute;
-                    top: 31px;
-                    left: -16px;
-                    background-color: orange;
-                    border-radius: 10px;
-                    padding: 7px;
+            /*글로버버튼------------------------------------------------*/
+            .lang_ul{
+                position: absolute;
+                top: 31px;
+                left: -16px;
+                background-color: orange;
+                border-radius: 10px;
+                padding: 7px;
 
-                    width: 70px;
-                    height: 105px;
+                width: 70px;
+                height: 105px;
 
-                    display: none;
-                    flex-direction: column;
-                    gap: 8px;
-                    z-index: 7;
-                }
+                display: none;
+                flex-direction: column;
+                gap: 8px;
+                z-index: 7;
+            }
                 /* 자바에서 토글해서 조작 */
                     .lang_ul.open{
                         display: flex;
@@ -274,7 +274,7 @@ img{max-width: 100%; vertical-align: top;}
                         .lang_ul>li>a:hover{
                             background-color: aqua;
                         }
-
+            /* ------------------------------------------ */
                 .icon_btn img {
                     width: 30px;
                     height: 30px;
@@ -287,7 +287,41 @@ img{max-width: 100%; vertical-align: top;}
                 margin-left: 20px;
                 }
         
+            /* 서치버튼 */
+            .search_bar{
+                position: fixed;
+                background-color: palegreen;
+                width: 100%;
+                top: 0;
+                left: 0;
+                z-index: 999;
 
+                display: flex;
+                justify-content: center;
+                
+                height: 250px;
+            }
+                .search_wrap{
+                    background-color: skyblue;
+                    width: 900px;
+                }
+                .popular_keyword{
+                    display: flex;
+                    gap: 30px;
+                }
+                .rank_ul{
+                    display: flex;
+                    gap: 15px;
+                }
+                .rank_li{
+                    border: 1px solid #796655;
+                    border-radius: 30px;
+                    padding: 3px 10px;
+                    width: 100px;
+                }
+                .rank_li>a{
+                    text-decoration: none;
+                }
         /* --------------------------------------------------- */
         /* 헤더 전체영역 호버 */
         .header:hover .nav_inner > li > a{
