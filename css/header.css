@@ -1,3 +1,188 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
 body{
-    background-color: aqua;
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
+li{list-style: none;}
+img{max-width: 100%; vertical-align: top;}
+
+/* 시작 */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    height: 95px;
+
+    background-color: aqua;
+
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s ease;
+
+}
+    .header:hover{
+        background-color: bisque;
+    }
+
+    /* 헤더 호버 시 생기는 얇은 회색선 */
+    .header::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        
+        height: 0.5px;
+        /* 하이를 줘서 top을 쓰면 안된다 */
+        background-color: rgb(230, 66, 180);
+        /* 면적차지해야 돼서 백그라운드컬러로 */
+        display: none;
+
+        z-index: 1;
+    }
+
+        .header:hover::after{
+            display: block;
+        }
+
+/* ------------------------------------------------------------ */
+    /* 헤더 안에 큰 틀 */
+    .header_wrap{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: bisque;
+        width: 100%;
+        padding: 0 50px;
+    }
+
+        /* 헤더 왼쪽 로고 */
+        .header_logo{
+            flex: 0 0 auto; /* 0 1 0 으로 자리 먹기  */
+        }
+        .header_logo img{
+            display: block;  
+            height: 35px;
+            filter: brightness(0) invert(1);
+            transition: filter 0.2s ease;
+        }
+
+            .header:hover .header_logo img{
+            filter: sepia(1) saturate(400%) hue-rotate(330deg) brightness(0.6);
+        }
+
+        /* ----------------------------------------------------- */
+        /* 메뉴스의 nav */
+        .nav{
+            background-color: rgb(162, 162, 224);
+            flex: 1; /* 0 1 0 으로 자리 먹기  */
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            margin-right: 90px;
+        }
+            .nav_inner{
+                display: flex;
+                align-items: center;
+                gap: 80px;
+            }
+                /* -------------------------------------------------- */
+                .nav_menus{
+                    position: relative; /* 밑에 스케일 선 기준 잡기 */
+                    height: 95px;
+                    background-color: rgb(214, 212, 60);
+                    display: flex;
+                    align-items: center;
+                }
+                    .nav_menus::after{
+                        position: absolute;
+                        content: "";
+
+                        left: 0;
+                        right: 0;
+                        bottom: 0; /* bottom 을 해줘야 바닥에 붙는다. */
+
+                        background-color: #413f3c;
+                        height: 2px;
+
+                        transform: scaleX(0);
+                        transform-origin: center;
+                        transition: transform 0.2s ease;
+
+                        z-index: 2;
+                    }
+                        .nav_menus:hover::after{
+                            transform: scaleX(1);
+                        }
+                
+                .nav_inner>li>a{
+                    display: inline-block;
+                    text-decoration: none;
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: white;
+                    transition: color 0.2s ease;
+                }
+                    .nav_inner>li>a:hover{
+                        color: brown;
+                    }
+                /* -------------------------------------------------- */
+                    /* 서브메뉴 */
+                    .nav_submenu{
+                        position: absolute;
+                        top: 95px;
+                        width: 100%;
+                        left: 0;
+                        right: 0;
+
+                        background-color: rgb(64, 150, 43);
+
+                    }
+                        .nav_menus:hover .nav_submenu{
+                            display: block;
+
+                        }
+
+
+        /* -------------------------------------------------- */
+        /* 아이콘 */
+        .icon_wrap{
+            background-color: blueviolet;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex: 0 0 auto; /* 0 1 0 으로 자리 먹기  */
+        }
+            .icon_btn{
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+            }
+                .icon_btn img {
+                    width: 30px;
+                    height: 30px;
+                    display: block;
+                    filter: brightness(0) invert(1);
+                    transition: filter 0.2s ease;
+                }
+                .icon_btn svg{
+                transition: stroke 0.2s ease; 
+                }
+        
+
+        /* --------------------------------------------------- */
+        /* 헤더 전체영역 호버 */
+        .header:hover .nav_inner > li > a{
+            color: #5c4b3b;
+        }
+
+        .header:hover .icon_btn img{
+            filter: sepia(1) saturate(400%) hue-rotate(330deg) brightness(0.6);
+        }
+
+        .header:hover .icon_btn svg{
+            stroke: #5c4b3b;
+        }
