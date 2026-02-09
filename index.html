@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>header</title>
     <link rel="stylesheet" href="./css/header.css">
 </head>
+
 <body>
     <header class="header" id="header">
         <div class="header_wrap">
             <h1 class="header_logo">
                 <a href="#">
-                    <img src="img/img/all_logo.png" alt="header_logo">
+                    <img src="img/img/logo_w_H1_m.png" alt="header_logo" class="logo_default">
+                    <img src="img/img/all_logo.png" alt="header_logo_hover" class="logo_hover">
                 </a>
             </h1>
-            
+
             <nav class="nav">
                 <ul class="nav_inner">
 
                     <li class="nav_menus">
                         <a href="#">2025 서울빛초롱축제</a>
 
-                        	<div class="nav_submenu">
-                                <ul class="submenu_inner">
-                                    <li><a href="#">소개</a></li>
-                                    <li><a href="#">오시는 길</a></li>
-                                    <li><a href="#">축제 둘러보기</a></li>
-                                    <li><a href="#">협업 파트너</a></li>
-                                </ul>
-                            </div>
+                        <div class="nav_submenu">
+                            <ul class="submenu_inner">
+                                <li><a href="#">소개</a></li>
+                                <li><a href="#">오시는 길</a></li>
+                                <li><a href="#">축제 둘러보기</a></li>
+                                <li><a href="#">협업 파트너</a></li>
+                            </ul>
+                        </div>
                     </li>
 
                     <li class="nav_menus">
@@ -74,11 +77,26 @@
             </nav>
 
             <div class="icon_wrap">
-                <button type="button" class="icon_btn"><img src="img/img/busi_H1_header_lang.png" aria-label="language"></button>
-                <button type="button" class="icon_btn"><img src="img/img/busi_H1_header_search.png" aria-label="search"></button>
+                <button type="button" class="icon_btn" id="global_btn"><img src="img/img/busi_H1_header_lang.png" aria-label="language">
+                </button>
+                <ul class="lang_ul">
+                    <li>
+                        <a href="#" class="ko active">
+                            국문 
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="eng">
+                            영문 
+                        </a>
+                    </li>
+                </ul>
+                <button type="button" class="icon_btn"><img src="img/img/busi_H1_header_search.png"
+                        aria-label="search"></button>
                 <button type="button" class="icon_btn" id="icon_menu_btn" aria-label="menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" 
-                        width="20" height="18" viewBox="0 0 20 18" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:100%; height:100%;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 20 18" fill="none"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="width:100%; height:100%;">
                         <line x1="0" y1="1.13" x2="20" y2="1.13"></line>
                         <line x1="0" y1="9" x2="20" y2="9"></line>
                         <line x1="0" y1="16.88" x2="20" y2="16.88"></line>
@@ -89,4 +107,5 @@
     </header>
     <script src="./js/header.js"></script>
 </body>
+
 </html>
