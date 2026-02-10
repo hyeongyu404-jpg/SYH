@@ -22,3 +22,19 @@ const langLinks = document.querySelectorAll(".lang_ul a");
         });
     });
 // ---------------------------------------------------------------
+    // 서치 클로즈 버튼 
+    const openBtn = document.querySelector("#search_open_btn");
+    const closeBtn = document.querySelector(".search_close");
+    const searchBar = document.querySelector(".search_bar");
+
+    // 열기 서치 버튼
+    openBtn.addEventListener("click", () => {
+        searchBar.classList.add("show");
+    });
+
+    // 열기 닫기 버튼
+    closeBtn.addEventListener("click", () => {
+        searchBar.classList.remove("show");
+    });
+
+

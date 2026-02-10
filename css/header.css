@@ -14,7 +14,7 @@ img{max-width: 100%; vertical-align: top;}
     z-index: 9999;
     height: 95px;
 
-    background-color: aqua;
+    /* background-color: aqua; */
 
     display: flex;
     align-items: center;
@@ -35,7 +35,7 @@ img{max-width: 100%; vertical-align: top;}
         
         height: 0.5px;
         /* 하이를 줘서 top을 쓰면 안된다 */
-        background-color: rgb(230, 66, 180);
+        background-color: rgb(175, 172, 174);
         /* 면적차지해야 돼서 백그라운드컬러로 */
         display: none;
 
@@ -52,7 +52,7 @@ img{max-width: 100%; vertical-align: top;}
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: bisque;
+        background-color: #efe9e1;
         width: 100%;
         padding: 0 50px;
 
@@ -82,7 +82,8 @@ img{max-width: 100%; vertical-align: top;}
  /* ----------------------------------------------------- */
         /* 메뉴스의 nav */
         .nav{
-            background-color: rgb(162, 162, 224);
+            /* background-color: rgb(162, 162, 224); */
+            background-color: #efe9e1;
             flex: 1; /* 0 1 0 으로 자리 먹기  */
             display: flex;
             align-items: center;
@@ -99,7 +100,8 @@ img{max-width: 100%; vertical-align: top;}
                 top: 95px;
                 width: 100%;
                 height: 70px;
-                background-color: aqua;
+                /* background-color: aqua; */
+                background-color: #efe9e1;
 
                 opacity: 0;
                 visibility: hidden;
@@ -120,7 +122,8 @@ img{max-width: 100%; vertical-align: top;}
                 .nav_menus{
                     position: relative; /* 밑에 스케일 선 기준 잡기 */
                     height: 95px;
-                    background-color: rgb(214, 212, 60);
+                    /* background-color: rgb(214, 212, 60); */
+                    background-color: #efe9e1;
                     display: flex;
                     align-items: center;
                 }
@@ -132,8 +135,8 @@ img{max-width: 100%; vertical-align: top;}
                         right: 0;
                         bottom: 0; /* bottom 을 해줘야 바닥에 붙는다. */
 
-                        background-color: #413f3c;
-                        height: 2px;
+                        background-color: #db6033;
+                        height: 1px;
 
                         transform: scaleX(0);
                         transform-origin: center;
@@ -150,7 +153,7 @@ img{max-width: 100%; vertical-align: top;}
                     text-decoration: none;
                     font-size: 20px;
                     font-weight: 600;
-                    color: white;
+                    color: #fafafa;
                     transition: color 0.2s ease;
                 }
                 /* -------------------------------------------------- */
@@ -205,7 +208,7 @@ img{max-width: 100%; vertical-align: top;}
                                 right: 0;
                                 bottom: -20%;
                                 height: 1px;
-                                background-color: red;
+                                background-color: #796655;
 
                                 transform: scaleX(0);
                                 transform-origin: center; 
@@ -219,7 +222,8 @@ img{max-width: 100%; vertical-align: top;}
 /* -------------------------------------------------- */
         /* 아이콘 */
         .icon_wrap{
-            background-color: blueviolet;
+            /* background-color: blueviolet; */
+            background-color: #efe9e1;
             display: flex;
             align-items: center;
             gap: 30px;
@@ -239,7 +243,7 @@ img{max-width: 100%; vertical-align: top;}
                 position: absolute;
                 top: 31px;
                 left: -16px;
-                background-color: orange;
+                background-color: #fafafa;
                 border-radius: 10px;
                 padding: 7px;
 
@@ -269,10 +273,10 @@ img{max-width: 100%; vertical-align: top;}
                     
                     }
                         .lang_ul>li>a.active{
-                            background-color: aqua;
+                            background-color: #efe9e1;
                         }
                         .lang_ul>li>a:hover{
-                            background-color: aqua;
+                            background-color: #efe9e1;
                         }
             /* ------------------------------------------ */
                 .icon_btn img {
@@ -287,10 +291,10 @@ img{max-width: 100%; vertical-align: top;}
                 margin-left: 20px;
                 }
         
-            /* 서치버튼 */
+            /* 서치버튼------------------------- */
             .search_bar{
                 position: fixed;
-                background-color: palegreen;
+                background: #efe9e1;
                 width: 100%;
                 top: 0;
                 left: 0;
@@ -298,30 +302,88 @@ img{max-width: 100%; vertical-align: top;}
 
                 display: flex;
                 justify-content: center;
-                
+                align-items: center;
                 height: 250px;
+
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.25s ease;
+            }
+            .search_bar.show{
+                opacity: 1;
+                visibility: visible;
             }
                 .search_wrap{
-                    background-color: skyblue;
+                    /* background-color: skyblue; */
                     width: 900px;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                 }
+                .search_input{
+                    width: 400px;
+                    /* background-color: tomato; */
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-bottom: 2px solid #7a6455;
+                }
+                    .search_input input{
+                        background-color: transparent;
+                        border: none;
+                        font-size: 16px;
+                        margin: 10px 3px;
+                    }
+                    .search_btn{
+                        width: 20px;
+                        height: 20px;
+                        cursor: pointer;
+                    }
                 .popular_keyword{
+                    /* background-color: purple; */
                     display: flex;
-                    gap: 30px;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 50px;
+                    margin: 27px 10px;
                 }
-                .rank_ul{
-                    display: flex;
-                    gap: 15px;
+                .popular_keyword h4{
+                    color: #5c4b3b;
                 }
-                .rank_li{
-                    border: 1px solid #796655;
-                    border-radius: 30px;
-                    padding: 3px 10px;
-                    width: 100px;
+                    .rank_ul{
+                        /* background-color: greenyellow; */
+                        display: flex;
+                        justify-items: end;
+                        gap: 10px;
+                    }
+                        .rank_li>a{
+                            text-decoration: none;
+                            border: 1px solid #796655;
+                            border-radius: 25px;
+                            padding: 10px;
+                            font-size: 15px;
+                            display: inline-block;
+                            min-width: 100px;
+                            text-align: center;
+                            color: #5c4b3b;
+                        }
+
+                .search_close{
+                    position: absolute;
+                    top: 20px;
+                    right: 30px;
+                    filter: invert(24%) sepia(8%) saturate(420%) hue-rotate(5deg) brightness(10%) contrast(105%);
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
                 }
-                .rank_li>a{
-                    text-decoration: none;
-                }
+                    .search_close img{
+                        display: block;
+                        width: 18px;
+                        height: 18px;
+                    }
+
         /* --------------------------------------------------- */
         /* 헤더 전체영역 호버 */
         .header:hover .nav_inner > li > a{
