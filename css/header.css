@@ -385,6 +385,126 @@ img{max-width: 100%; vertical-align: top;}
                     }
 
         /* --------------------------------------------------- */
+        /* 햄버거 메뉴 페이지 */
+        .hambutton_page{
+            background-color: pink;
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100vh;
+
+            z-index: 9999;
+
+            
+        }
+            .mns_wrap{
+                background-color: #efe9e1;
+                width: 100%;
+                height: 100%;
+
+                padding: 20px 60px;
+                box-sizing: border-box;
+                /* ? */
+            }
+            /* -----top_logo 상단 */
+                .top_logo_wrap{
+                    /* background-color: tomato; */
+                    background-color: transparent;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 20px;
+                }
+                        .top_logo img{
+                            height: 40px;
+                            filter: contrast(110%) saturate(110%);
+                        } 
+                    .hambutton_close{
+                        background-color: transparent;
+                        border: none;
+                        cursor: pointer;
+                    }
+                        .hambutton_close img{
+                            width: 30px;
+                            height: 30px;
+                            
+                            transition: transform 0.4s ease;
+                        }
+                        .hambutton_close img:hover{
+                            transform: rotate(180deg);
+                        }
+            /* ----hambutton_menu_inner 하단 */
+            .hambutton_menu_inner{
+                background-color: aqua;
+                margin-top: 200px;
+            }
+                .hambutton_menus_ul{
+                    background-color: #efe9e1;
+                    padding: 50px 170px;
+                }
+                    .hambutton_menus_li{
+                        /* background-color: tomato; */
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-bottom: 0.8px solid rgb(167, 165, 165);
+                        padding: 30px 0;
+                    }
+                        .hambutton_menus_li>a{
+                            font-size: 50px;
+                            font-weight: 800;
+                            text-decoration: none;
+                            color: #796655;
+                        }
+                        .hambutton_menus_li>a:hover{
+                            color: #b83218;
+                        }
+                            .ham_menus_sub{
+                                background-color: #efe9e1;
+                            }
+                                .ham_menus_sub_ul{
+                                    display: flex;
+                                    /* background-color: pink; */
+                                }
+
+                                .ham_menus_sub_li:not(:first-child)::before{
+                                    content: "/";
+                                    display: inline-block;
+                                    margin: 0 10px;
+                                    color: #7a6455;
+                                    font-size: 23px;
+                                }
+                                    .ham_menus_sub_li>a{
+                                        text-decoration: none;
+                                        font-size: 23px;
+                                        color: #7a6455;
+                                        font-weight: 650;
+
+                                        position: relative;
+                                        display: inline-block;
+                                    }
+                                    .ham_menus_sub_li>a::after{
+                                        content: "";
+                                        position: absolute;
+                                        left: 0;
+                                        right: 0;
+                                        bottom: -7px;
+                                        height: 1px;
+                                        
+                                        background-color: #7a6455;
+
+                                        transform: scaleX(0);
+                                        /* 하이를 2로 주면 여기가 터진다
+                                        그럴때는 scale 말고 translateX(-50%)주고
+                                        호버 후 위드로 준다.... */
+                                        transform-origin: center;
+                                        transition: transform 0.3s ease;
+                                    }
+                                    .ham_menus_sub_li>a:hover::after{
+                                        transform: scaleX(1);
+                                    }
+        /* --------------------------------------------------- */
         /* 헤더 전체영역 호버 */
         .header:hover .nav_inner > li > a{
             color: #796655;

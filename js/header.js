@@ -22,7 +22,7 @@ const langLinks = document.querySelectorAll(".lang_ul a");
         });
     });
 // ---------------------------------------------------------------
-    // 서치 클로즈 버튼 
+    // 서치 버튼 
     const openBtn = document.querySelector("#search_open_btn");
     const closeBtn = document.querySelector(".search_close");
     const searchBar = document.querySelector(".search_bar");
@@ -36,5 +36,8 @@ const langLinks = document.querySelectorAll(".lang_ul a");
     closeBtn.addEventListener("click", () => {
         searchBar.classList.remove("show");
     });
+// ---------------------------------------------------------------
+    // 햄버거 버튼
+ 
 
 
