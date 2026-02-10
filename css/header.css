@@ -397,8 +397,26 @@ img{max-width: 100%; vertical-align: top;}
 
             z-index: 9999;
 
-            
-        }
+                --x: 100%;
+                --y: 0%;
+
+                /* 처음은 점 */
+                clip-path: circle(0px at var(--x) var(--y));
+
+                
+                transition: clip-path 1s cubic-bezier(.2,.8,.2,1);
+
+                visibility: hidden;
+                pointer-events: none;
+            }
+
+            /* 열림 */
+            .hambutton_page.active{
+                clip-path: circle(150vmax at var(--x) var(--y));
+                visibility: visible;
+                pointer-events: auto;
+            }
+
             .mns_wrap{
                 background-color: #efe9e1;
                 width: 100%;
