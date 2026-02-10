@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>bi</title>
+    <title>BI</title>
     <style>
       @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
       * {
@@ -71,12 +71,210 @@
         font-weight: 700;
         padding-top: 1.4rem;
       }
+
+      /* 공용 */
+      .rounded {
+        border-radius: 24px;
+        border: 1;
+        overflow: hidden;
+      }
+      .btn-download {
+        background-color: #c30b09;
+        color: #fff;
+        padding: 1.4rem 2.4rem;
+        text-align: center;
+        border: 1;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+      .flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .mt-2 {
+        margin-top: 2rem;
+      }
+      .mb-2 {
+        margin-bottom: 2rem;
+      }
+      .mb-4 {
+        margin-bottom: 4rem;
+      }
+      .pr-4 {
+        padding-right: 4rem;
+      }
+
+      /* 서울빛초롱축제 아이덴티티(BI) */
+      .seoulBi {
+        width: 1430px;
+        margin: 0 auto;
+        font-size: 1rem;
+        color: #615757;
+      }
+      .bi-title {
+        font-size: 3.8rem;
+        font-weight: bold;
+        text-align: center;
+        margin: 3rem 0;
+      }
+      .bi-subTitle {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1.6rem;
+      }
+      .bi-itemWrap {
+        display: flex;
+        text-align: center;
+        height: 380px;
+        gap: 2rem;
+      }
+      .bi-itemWrap > div {
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        background-image: url(/src/images/m0101_bg.png);
+      }
+      .bi-colors {
+        width: 100%;
+        background-image: url(/src/images/m0101_bg.png);
+        display: flex;
+        padding: 4.4rem 3rem;
+        margin-bottom: 2rem;
+      }
+      .bi-color-b {
+        width: 50%;
+        color: white;
+        background-color: black;
+        padding: 3rem;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      .bi-color-w {
+        width: 50%;
+        color: black;
+        background-color: white;
+        padding: 3rem;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      .bi-color-name {
+        margin-bottom: 1rem;
+      }
+      .bi-colors span {
+        color: #dddadab4;
+      }
+      .bi-noti {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2.2rem;
+        background-image: url(/src/images/m0101_bg.png);
+        margin-bottom: 4rem;
+      }
+
+      /* 광화문마켓 아이덴티티(BI) */
+      .gwanghwamunBi {
+        width: 100%;
+        margin-top: 8rem;
+        padding-top: 5rem;
+        background-image: url(/src/images/m0101_bg.png);
+      }
+      .inner {
+        width: 1430px;
+        margin: 0 auto;
+      }
+      .bis-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+        margin-bottom: 4rem;
+      }
+      .bis {
+        display: flex;
+        gap: 2rem;
+      }
+      .bis-imagebox {
+        width: 46%;
+        height: 340px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .bis-textbox {
+        width: 54%;
+        height: 340px;
+        padding: 4rem;
+      }
+      .gwanghwamun-market {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        padding: 9rem;
+        margin-bottom: 4rem;
+      }
+      .symbol-wrap {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 4rem;
+      }
+      .symbols {
+        width: 33.33%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        padding: 5rem 2rem;
+      }
+      .gwanghwamunBi-colors {
+        background-color: white;
+        display: flex;
+        padding: 4.4rem 3rem;
+        margin-bottom: 2rem;
+      }
+      .gwanghwamunBi-color-r {
+        width: 33.33%;
+        color: white;
+        background-color: rgba(231, 56, 40, 1);
+        padding: 3rem;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      .gwanghwamunBi-color-g {
+        width: 33.33%;
+        color: white;
+        background-color: #00ba50;
+        padding: 3rem;
+      }
+      .gwanghwamunBi-color-b {
+        width: 33.33%;
+        color: white;
+        background-color: #000;
+        padding: 3rem;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      .gwanghwamunBi-colors span {
+        color: #dddadab4;
+      }
+      .gwanghwamunBi-noti {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2.2rem;
+        margin-bottom: 4rem;
+        background-color: white;
+      }
     </style>
   </head>
   <body>
     <header>
       <div>
-        <img class="logo" src="/src/images/all_logo.png" alt="로고" />
+        <img class="logo" src="/src/images/logo_w_H1_m.png" alt="로고" />
       </div>
       <ul class="menu">
         <li><a href="#">2025 서울빛초롱축제</a></li>
@@ -100,8 +298,233 @@
           </div>
         </div>
       </section>
-      <section class=""></section>
-      <section class=""></section>
+      <section class="seoulBi">
+        <p class="bi-title">서울빛초롱축제 아이덴티티(BI)</p>
+        <div>
+          <p class="bi-subTitle">BI 소개</p>
+          <p>
+            서울빛초롱축제의 새로운 브랜드 아이덴티티(BI)는 전통과 현대가
+            공존하는 서울의 문학적 매력을 반영한 심볼입니다.
+          </p>
+          <p class="mb-2">
+            본 BI는 청계천에서 열리는 서울빛초롱축제의 상징적 의미를 담아내며,
+            한국 전통 등불의 형상을 현대적인 감각으로 재해석한 디자인입니다.
+          </p>
+        </div>
+        <div class="bi-itemWrap mb-4">
+          <div class="rounded">
+            <img src="/src/images/text_black.png" alt="서울빛초롱축제 BI" />
+          </div>
+          <div class="rounded">
+            <img
+              src="/src/images/seoul_lantern_logo.png"
+              alt="서울빛초롱축제 BI"
+            />
+          </div>
+        </div>
+        <div>
+          <p class="bi-subTitle">심볼</p>
+          <p>
+            BI의 심볼은 전통 한국 등불의 형태에서 영감을 받아, 본직적인 '빛'의
+            요소를 중심으로 표현되었습니다. 중심에 위치한 빛에 그래픽은 어둠
+            속에서 밝히는 빛의 역할을 상징합니다.
+          </p>
+          <p>
+            또한 한국 전통의 상징인 초롱을 심플한 실루엣의 형태로 디자인해
+            현대적인 감각을 더했습니다. 심볼 상단의 고리 형태는 등불의 고유한
+            형태를 강조하는 포인트로,
+          </p>
+          <p class="mb-2">
+            초롱에 대한 직관적인 이해를 돕습니다. 초롱과 현대적으로 표현된 빛의
+            그래픽을 조화롭게 결합하여, 전통과 현대가 공존하는 빛초롱축제의
+            지향점을 시각적으로 표현했습니다.
+          </p>
+        </div>
+        <div>
+          <p class="bi-subTitle">색상규정</p>
+          <div class="bi-colors rounded">
+            <div class="bi-color-b rounded">
+              <p>Black #000000</p>
+              <p class="bi-color-name">PANTONE Black</p>
+              <p>
+                <span>C 0</span>
+                <span>M 0</span>
+                <span>Y 0</span>
+                <span>K 100</span>
+              </p>
+              <p>
+                <span>R 0</span>
+                <span>G 0</span>
+                <span>B 0</span>
+              </p>
+            </div>
+            <div class="bi-color-w rounded">
+              <p>White #ffffff</p>
+              <p class="bi-color-name">PANTONE White</p>
+              <p>
+                <span>C 100</span>
+                <span>M 100</span>
+                <span>Y 100</span>
+                <span>K 100</span>
+              </p>
+              <p>
+                <span>R 255</span>
+                <span>G 255</span>
+                <span>B 255</span>
+              </p>
+            </div>
+          </div>
+          <div class="bi-noti rounded">
+            <p>
+              서울빛초롱축제의 BI 상표권은 서울관광재단에 귀속되며, 재단과
+              사전협의 없는 무단사용을 금합니다.
+            </p>
+          </div>
+          <div class="flex">
+            <a class="btn-download" href="#" download title="download btn"
+              >서울빛초롱축제 BI 다운로드</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="gwanghwamunBi">
+        <div class="inner">
+          <p class="bi-title">광화문마켓 아이덴티티(BI)</p>
+          <div>
+            <p class="bi-subTitle">BI 소개</p>
+          </div>
+          <div class="bis-wrap">
+            <div class="bis">
+              <div class="bis-imagebox rounded">
+                <img
+                  src="/src/images/gate_transparent.png"
+                  alt="프라이머리 심볼"
+                />
+              </div>
+              <div class="bis-textbox">
+                <p class="bi-subTitle mt-2">프라이머리 심볼</p>
+                <p class="pr-4">
+                  프라이머리 시그니쳐는 광화문과 마켓의 크리스마스 분위기를
+                  상징적으로 표현한 디자인입니다. 중앙의 케빈 모양은 전체
+                  디자인의 중심을 이루며 한국 전통 건축과 현대적인 요소를 결합해
+                  조화롭게 나타냅니다. 레드와 그린 색상의 조화는 크리스마스의
+                  따뜻하고 활기찬 느낌을 강조합니다.
+                </p>
+              </div>
+            </div>
+            <div class="bis">
+              <div class="bis-imagebox rounded">
+                <img src="/src/images/icon1_transparent.png" alt="트리 심볼" />
+              </div>
+              <div class="bis-textbox">
+                <p class="bi-subTitle mt-2">트리 심볼</p>
+                <p class="pr-4">
+                  세컨더리 시그니쳐 1은 겉은 크리스마스 트리 형상을, 중심부의
+                  케빈은 마켓 부스의 형상을 배치해 크리스마스 시즌의 특별한
+                  분위기를 강조합니다.
+                </p>
+              </div>
+            </div>
+            <div class="bis">
+              <div class="bis-imagebox rounded">
+                <img
+                  src="/src/images/icon2_transparent.png"
+                  alt="마켓 부스 심볼"
+                />
+              </div>
+              <div class="bis-textbox">
+                <p class="bi-subTitle mt-2">마켓 부스 심볼</p>
+                <p class="pr-4">
+                  세컨더리 시그니쳐 2는 케빈을 활용해 광장의 북적북적한 느낌을
+                  강조한 디자인으로, 마켓의 활기찬 분위기와 많은 방문객을
+                  상징합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="bi-subTitle">국문 슬로건</p>
+            <div class="gwanghwamun-market rounded">
+              <img src="/src/images/gwanghwamun_market.png" alt="" />
+            </div>
+          </div>
+          <div>
+            <p class="bi-subTitle">국문 심볼 타입별</p>
+            <div class="symbol-wrap">
+              <div class="symbols rounded">
+                <img src="/src/images/gwanghwamun_combo1.png" alt="" />
+              </div>
+              <div class="symbols rounded">
+                <img src="/src/images/gwanghwamun_combo2.png" alt="" />
+              </div>
+              <div class="symbols rounded">
+                <img src="/src/images/gwanghwamun_combo3.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="bi-subTitle">색상 규정</p>
+            <div class="gwanghwamunBi-colors rounded">
+              <div class="gwanghwamunBi-color-r rounded">
+                <p>RED #f3efe2</p>
+                <p class="bi-color-name">PANTONE 2034C</p>
+                <p>
+                  <span>C 0</span>
+                  <span>M 90</span>
+                  <span>Y 85</span>
+                  <span>K 0</span>
+                </p>
+                <p>
+                  <span>R 231</span>
+                  <span>G 56</span>
+                  <span>B 40</span>
+                </p>
+              </div>
+              <div class="gwanghwamunBi-color-g">
+                <p>Green #00ba50</p>
+                <p class="bi-color-name">PANTONE 2257C</p>
+                <p>
+                  <span>C 74</span>
+                  <span>M 0</span>
+                  <span>Y 87</span>
+                  <span>K 0</span>
+                </p>
+                <p>
+                  <span>R 0</span>
+                  <span>G 186</span>
+                  <span>B 80</span>
+                </p>
+              </div>
+              <div class="gwanghwamunBi-color-b rounded">
+                <p>Black #000000</p>
+                <p class="bi-color-name">PANTONE Black</p>
+                <p>
+                  <span>C 0</span>
+                  <span>M 0</span>
+                  <span>Y 0</span>
+                  <span>K 100</span>
+                </p>
+                <p>
+                  <span>R 0</span>
+                  <span>G 0</span>
+                  <span>B 0</span>
+                </p>
+              </div>
+            </div>
+            <div class="gwanghwamunBi-noti rounded">
+              <p>
+                광화문 마켓의 BI 상표권은 서울관광재단에 귀속되며, 재단과
+                사전협의 없는 무단사용을 금합니다.
+              </p>
+            </div>
+            <div class="flex">
+              <a class="btn-download" href="#" download title="download btn"
+                >광화문 마켓 BI 다운로드</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer></footer>
   </body>
