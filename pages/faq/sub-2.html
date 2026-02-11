@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>서울빛초롱축제 FAQ</title>
+    <style>
+      @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        user-select: none;
+      }
+      body {
+        width: 100%;
+        overflow-x: hidden;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #333333;
+        font-family: 'NanumSquare', serif;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      header {
+        position: fixed;
+        width: 100%;
+        height: 87px;
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 0 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .menu {
+        display: flex;
+        gap: 3rem;
+      }
+      .hero {
+        width: 100%;
+        height: 100vh;
+        background-image: url(/src/images/m04_top.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .page-header {
+        position: absolute;
+        left: 14%;
+        top: 42%;
+      }
+      .page-header__breadcrumb {
+        color: #ffffff;
+        font-size: 1.1rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 1.1rem;
+      }
+      .bar {
+        display: block;
+        width: 1px;
+        height: 0.8rem;
+        background-color: white;
+      }
+      .page-header__title {
+        color: #ffffff;
+        font-size: 4.6rem;
+        font-weight: 700;
+        padding-top: 1.4rem;
+      }
+
+      /* 섹션 */
+      .section-common {
+        width: 1430px;
+        margin: 0 auto;
+        font-size: 1rem;
+        color: #000;
+        padding: 4rem 0;
+      }
+      .title {
+        font-size: 1.9rem;
+        font-weight: bold;
+        margin-bottom: 3rem;
+      }
+
+      /* 탭헤더 */
+      .tab-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      /* 탭메뉴 */
+      .tab-menu {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+      .tab-menu li:hover {
+        background-color: rgba(211, 211, 211, 0.199);
+        border-radius: 20px;
+      }
+      .tab-menu a {
+        font-size: 1.2rem;
+        color: lightgray;
+      }
+      .tab-menu a.selected {
+        color: black;
+        padding-bottom: 4px;
+        border-bottom: 2px solid #2c2c2c;
+      }
+
+      /* 공지글 */
+      .notice {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+      }
+      .item-wrap:first-of-type {
+        border-top: 0.5px solid rgb(236, 236, 236);
+      }
+      .item-wrap {
+        /* TOGGLE */
+        /* height: 120px; */
+        padding: 2rem 1rem;
+        border-bottom: 0.5px solid rgb(236, 236, 236);
+        overflow: hidden;
+      }
+      .item-wrap.selected {
+        background-color: rgba(141, 144, 172, 0.04);
+      }
+      .item-data {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .item-badge {
+        padding-left: 1rem;
+        font-size: 1.1rem;
+        color: #888888;
+      }
+      .item-title {
+        font-size: 1.1rem;
+      }
+      .data-main {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+      .data-sub {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 0.5rem;
+        margin-top: 10px;
+      }
+      .data-time {
+        font-size: 1rem;
+        color: rgb(172, 172, 172);
+      }
+      .sub-data {
+        display: flex;
+        gap: 0.5rem;
+      }
+      .data-time,
+      .data-watcher,
+      .data-account {
+        font-size: 0.75rem;
+        color: #888888;
+      }
+      .anser {
+        margin-top: 2rem;
+        padding-left: 1rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: rgb(60, 87, 241);
+      }
+
+      /* 페이지네이션 */
+      .pagination {
+        display: flex;
+        gap: 1.4rem;
+        justify-content: center;
+        align-items: center;
+      }
+      .pagination-number {
+        display: flex;
+        gap: 1.2rem;
+        color: lightgray;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.8rem;
+      }
+      .pagination-number > li > a {
+        color: lightgray;
+        font-weight: 400;
+        font-size: 1rem;
+      }
+      li.selected-page {
+        padding: 5px 10px;
+        border: 0;
+        border-radius: 6px;
+        background-color: #000;
+        color: white;
+      }
+      li.selected-page > a {
+        font-weight: bold;
+      }
+
+      .ul-flex-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 6rem;
+      }
+      .ul-flex-col > li {
+        font-size: 1.9rem;
+        font-weight: bold;
+      }
+      .ul-flex-col > li > ul > li {
+        font-size: 1.4rem;
+        font-weight: 500;
+      }
+      .li-flex {
+        display: flex;
+        gap: 5rem;
+      }
+      .text-p,
+      .text-span {
+        font-size: 0.95rem;
+        margin-top: 0.3rem;
+        font-weight: 400;
+        text-align: left;
+      }
+      .disc {
+        position: relative;
+      }
+      .disc::before {
+        content: '.';
+        line-height: 24px;
+        margin-right: -60px;
+      }
+      .disc::after {
+        content: '';
+        position: absolute;
+        left: 3px;
+        top: 20px;
+        bottom: -7.3rem;
+        width: 3px;
+        background: #000;
+        opacity: 0.1;
+      }
+      .disc:last-child::after {
+        display: none;
+      }
+
+      /* 공용 */
+      .rounded {
+        border-radius: 24px;
+        border: 1;
+        overflow: hidden;
+      }
+      .rounded-none {
+        border-radius: 0;
+      }
+      .btn-download {
+        background-color: #c30b09;
+        color: #fff;
+        padding: 1.4rem 2.4rem;
+        text-align: center;
+        border: 1;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+      .flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .mt-2 {
+        margin-top: 2rem;
+      }
+      .mb-2 {
+        margin-bottom: 2rem;
+      }
+      .mb-4 {
+        margin-bottom: 4rem;
+      }
+      .pr-4 {
+        padding-right: 4rem;
+      }
+      .bg-none {
+        background-color: transparent;
+      }
+      .color-lg {
+        color: lightgray;
+      }
+    </style>
+    <!-- icons -->
+    <script
+      src="https://kit.fontawesome.com/ce664c6afc.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div>
+        <img class="logo" src="/src/images/logo_w_H1_m.png" alt="로고" />
+      </div>
+      <ul class="menu">
+        <li><a href="#">2025 서울빛초롱축제</a></li>
+        <li><a href="#">2025 광화문 마켓</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">아카이브</a></li>
+      </ul>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="page-header">
+          <div class="page-header__breadcrumb">
+            <span>Home</span>
+            <span class="bar"></span>
+            <span>아카이브</span>
+            <span class="bar"></span>
+            <span>서울빛초롱축제 FAQ</span>
+          </div>
+          <div class="page-header__title">
+            <p>아카이브</p>
+          </div>
+        </div>
+      </section>
+      <section class="section-common">
+        <div class="tab-header">
+          <ul class="tab-menu">
+            <li><a class="selected" href="#">전체</a></li>
+            <li><a href="#">일반</a></li>
+            <li><a href="#">방문</a></li>
+            <li><a href="#">교통</a></li>
+            <li><a href="#">참여</a></li>
+          </ul>
+        </div>
+        <article class="notice">
+          <div class="item-wrap selected">
+            <div class="item-data">
+              <div class="data-main">
+                <span class="item-badge">4</span>
+                <p class="item-title">비/눈이 올 경우, 행사가 취소되나요?</p>
+              </div>
+              <div class="data-sub">
+                <i class="fa-solid fa-minus"></i>
+                <div class="sub-data">
+                  <p class="data-time">2025.12.18</p>
+                  <p class="data-watcher"><i class="fa-solid fa-eye"></i> 28</p>
+                  <p class="data-account">최고관리자</p>
+                </div>
+              </div>
+            </div>
+            <!-- A -->
+            <div class="anser">
+              <p>
+                청계천 접근이 통제되거나, 대설주의보의 정도의 비/눈이 올
+                경우에만 취소됩니다.<br />이외의 약한 비/눈에는 제설작업 후
+                운영합니다.<br />(우천시) 폭우 시 청계천 전체가 통제가 될
+                경우에는 행사가 취소됩니다 (폭설시) 대설주의보가 발효될 경우
+                행사가 취소됩니다.
+              </p>
+            </div>
+          </div>
+          <div class="item-wrap selected">
+            <div class="item-data">
+              <div class="data-main">
+                <span class="item-badge">3</span>
+                <p class="item-title">포켓몬 협업 이벤트는 어디서 열리나요?</p>
+              </div>
+              <div class="data-sub">
+                <i class="fa-solid fa-plus color-lg"></i>
+                <div class="sub-data">
+                  <p class="data-time">2025.12.11</p>
+                  <p class="data-watcher"><i class="fa-solid fa-eye"></i> 45</p>
+                  <p class="data-account">최고관리자</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item-wrap selected">
+            <div class="item-data">
+              <div class="data-main">
+                <span class="item-badge">2</span>
+                <p class="item-title">
+                  강아지/반려동물과 함께 축제 관람이 가능한가요?
+                </p>
+              </div>
+              <div class="data-sub">
+                <i class="fa-solid fa-plus color-lg"></i>
+                <div class="sub-data">
+                  <p class="data-time">2025.12.11</p>
+                  <p class="data-watcher"><i class="fa-solid fa-eye"></i> 84</p>
+                  <p class="data-account">최고관리자</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item-wrap selected">
+            <div class="item-data">
+              <div class="data-main">
+                <span class="item-badge">1</span>
+                <p class="item-title">
+                  청계천 조형물 철거는 언제 이루어지나요?
+                </p>
+              </div>
+              <div class="data-sub">
+                <i class="fa-solid fa-plus color-lg"></i>
+                <div class="sub-data">
+                  <p class="data-time">2025.12.11</p>
+                  <p class="data-watcher"><i class="fa-solid fa-eye"></i> 50</p>
+                  <p class="data-account">최고관리자</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- pagination -->
+        <div class="pagination">
+          <i class="fas fa-angle-left"></i>
+          <ul class="pagination-number">
+            <li class="selected-page"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <i class="fa-solid fa-ellipsis"></i>
+          </ul>
+          <i class="fas fa-angle-right"></i>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>
