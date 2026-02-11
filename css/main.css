@@ -1,0 +1,113 @@
+/* 섹션 archive ---------------------------------------------- */
+.archive{
+    background-color: tomato;
+
+}
+.archive_wrap{
+    background-color: skyblue;
+    padding: 10px 200px;
+}
+.archive_wrap>h1{
+    font-size: 50px;
+
+}
+
+.archive_card_title_wrap{
+    background-color: violet;
+    display: flex;
+    gap: 10px;
+}
+.archive_card_title_wrap>li{
+    list-style: none;
+    border: none;
+}
+
+.swiper_wrap{
+    background-color: tomato;
+    display: flex;
+}
+.archive_card_slide_wrap{
+    background-color: gold;
+    width: 1450px;
+    height: 450px;
+}
+.thumb{
+    width: 466px;
+    height: 350px;
+    border-radius: 20px;
+}
+.archive_card_info_wrap{
+    background-color: greenyellow;
+    margin: 20px;
+}
+.archive_card_info_label{
+    text-decoration: none;
+}
+.archive_card_info_txt{
+    text-decoration: none;
+
+}
+
+.archive_card_info_label{
+    background-color: wheat;
+}
+.archive_card_info_txt{
+    background-color: palegreen;
+}
+/* 섹션 partnership ---------------------------------------------- */
+.partnership{
+    background-color: skyblue;
+}
+    .partnership_wrap{
+    background-color: ;
+    padding: 30px 200px;
+
+    }
+        .partnership_wrap h1{
+            font-size: 50px;
+            background-color: aqua;
+            padding-bottom: 30px;
+            }
+        /* 서울페스티벌----------------- */
+        .seoulfestival_wrap{
+        background-color: tomato;
+        }
+            
+            .festival_imgbox{
+            background-color: greenyellow;
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+            height: 100px;
+            gap: 30px;
+            }
+            .festival_imgbox>li{
+                list-style: none;
+            }
+                .festival_imgbox>li>img{
+                object-fit: contain;
+                width: 130px;
+                height: 60px;   
+            }
+        /* 광화문마켓----------------- */
+        .gwanghwamun_wrap{
+            background-color: gold;
+        }
+            .market_imgbox{
+                background-color: hotpink;
+                display: flex;
+                align-items: center;
+                padding: 20px 0;
+                height: 100px;
+                gap: 30px;
+
+
+            }
+                .market_imgbox>li{
+                    list-style: none;
+                }
+                    .market_imgbox>li>img{
+                        object-fit: contain;
+                        width: 130px;
+                        height: 60px;   
+                    }
