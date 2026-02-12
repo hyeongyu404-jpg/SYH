@@ -1,90 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
+
 <body>
+    <section class="leaflet">
+        
+    </section>
     <!-- 섹션 아카이브 -->
+    <div class="bcg04"></div>
     <section class="archive">
         <div class="archive_wrap">
             <h1>아카이브</h1>
-            <ul class="archive_card_title_wrap">
-                <li class="archive_title">2025 서울빛초롱축제 사진</li>
-                <li class="archive_title">서울빛초롱축제 역대 사진</li>
-                <li class="archive_title">2025 광화문 마켓 사진</li>
-                <li class="archive_title">광화문 마켓 역대 사진</li>
+
+            <ul class="archive_card_title_wrap" id="archivetabs">
+                <li class="archive_title is-active" data-tab="0">2025 서울빛초롱축제 사진</li>
+                <li class="archive_title" data-tab="1">서울빛초롱축제 역대 사진</li>
+                <li class="archive_title" data-tab="2">2025 광화문 마켓 사진</li>
+                <li class="archive_title" data-tab="3">광화문 마켓 역대 사진</li>
             </ul>
-            <div class="swiper_wrap">
-                <div class="archive_card_slide_wrap">
-                    <a href="#">
-                        <div class="thumb" style="background: url(./img/apms/title/thumb01.png)center/cover no-repeat;"></div>
-                        <div class="archive_card_info_wrap">
-                            <span class="archive_card_info_label">서울빛초롱축제</span>
-                            <div class="archive_card_info_txt">2025 서울빛초롱축제, 팔마</div>
-                        </div>
-                    </a>
+
+            <div class="archive_swiper_container">
+                <!-- ✅ Swiper 1개만 유지 (카피사이트 방식) -->
+                <div class="swiper archive_swiper" id="archiveSwiper">
+                    <div class="swiper-wrapper" id="archiveWrapper"></div>
                 </div>
-                <div class="archive_card_slide_wrap">
-                    <a href="#">
-                        <div class="thumb" style="background: url(./img/apms/title/thumb02.png)center/cover no-repeat;"></div>
-                        <div class="archive_card_info_wrap">
-                            <span class="archive_card_info_label">서울빛초롱축제</span>
-                            <div class="archive_card_info_txt">2025 서울빛초롱축제, 시등의 순간</div>
-                        </div>
-                    </a>
+
+                <!-- ✅ 버튼 (항상 보이게: swiper 기본 네비) -->
+                <div class="swiper-button-prev">
+                    <img src="./img/img/item_slider_prev.png" alt="이전 버튼">
                 </div>
-                <div class="archive_card_slide_wrap">
-                    <a href="#">
-                        <div class="thumb" style="background: url(./img/apms/title/thumb03.png)center/cover no-repeat;"></div>
-                        <div class="archive_card_info_wrap">
-                            <span class="archive_card_info_label">서울빛초롱축제</span>
-                            <div class="archive_card_info_txt">2025 서울빛초롱축제, 옛빛+최초의 전화기</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="archive_card_slide_wrap">
-                    <a href="#">
-                        <div class="thumb" style="background: url(./img/apms/title/thumb04.png)center/cover no-repeat;"></div>
-                        <div class="archive_card_info_wrap">
-                            <span class="archive_card_info_label">서울빛초롱축제</span>
-                            <div class="archive_card_info_txt">2025 서울빛초롱축제, 움직이는 빛</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="archive_card_slide_wrap">
-                    <a href="#">
-                        <div class="thumb" style="background: url(./img/apms/title/thumb05.png)center/cover no-repeat;"></div>
-                        <div class="archive_card_info_wrap">
-                            <span class="archive_card_info_label">서울빛초롱축제</span>
-                            <div class="archive_card_info_txt">2025 서울빛초롱축제, 빛의 선물</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="archive_card_slide_wrap">
-                    <a href="#">
-                        <div class="thumb" style="background: url(./img/apms/title/thumb06.png)center/cover no-repeat;"></div>
-                        <div class="archive_card_info_wrap">
-                            <span class="archive_card_info_label">서울빛초롱축제</span>
-                            <div class="archive_card_info_txt">2025 서울빛초롱축제, 랜드마크</div>
-                        </div>
-                    </a>
+                <div class="swiper-button-next">
+                    <img src="./img/img/item_slider_next.png" alt="다음 버튼">
                 </div>
             </div>
-            <button class="archive_arrow">
-                <img src="./img/img/item_slider_prev.png" alt="archive_prev">
-            </button>
-            <button class="archive_arrow">
-                <img src="./img/img/item_slider_next.png" alt="archive_next">
-            </button>
         </div>
     </section>
+
     <!-- 섹션 파트너십 -->
     <section class="partnership">
         <div class="partnership_wrap">
             <h1>partnership</h1>
+
             <div class="seoulfestival_wrap">
                 <h2>2025 서울빛초롱축제</h2>
                 <ul class="festival_imgbox">
@@ -98,16 +61,21 @@
                     <li><img src="./img/img/festival08.png" alt="korea tourism organization"></li>
                 </ul>
             </div>
+
             <div class="gwanghwamun_wrap">
                 <h2>2025 광화문마켓</h2>
-                   <ul class="market_imgbox">
-                        <li><img src="./img/img/market01.png" alt="avartar"></li>
-                        <li><img src="./img/img/market02.png" alt="barbour"></li>
-                        <li><img src="./img/img/market03.png" alt="nespresso"></li>
-                   </ul>
+                <ul class="market_imgbox">
+                    <li><img src="./img/img/market01.png" alt="avartar"></li>
+                    <li><img src="./img/img/market02.png" alt="barbour"></li>
+                    <li><img src="./img/img/market03.png" alt="nespresso"></li>
+                </ul>
             </div>
         </div>
     </section>
+
 </body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="./js/main.js"></script>
+
+
 </html>

@@ -1,113 +1,186 @@
-/* 섹션 archive ---------------------------------------------- */
-.archive{
-    background-color: tomato;
 
-}
-.archive_wrap{
-    background-color: skyblue;
-    padding: 10px 200px;
-}
-.archive_wrap>h1{
-    font-size: 50px;
-
-}
-
-.archive_card_title_wrap{
-    background-color: violet;
-    display: flex;
-    gap: 10px;
-}
-.archive_card_title_wrap>li{
-    list-style: none;
-    border: none;
-}
-
-.swiper_wrap{
-    background-color: tomato;
-    display: flex;
-}
-.archive_card_slide_wrap{
-    background-color: gold;
-    width: 1450px;
-    height: 450px;
-}
-.thumb{
-    width: 466px;
-    height: 350px;
-    border-radius: 20px;
-}
-.archive_card_info_wrap{
-    background-color: greenyellow;
-    margin: 20px;
-}
-.archive_card_info_label{
-    text-decoration: none;
-}
-.archive_card_info_txt{
-    text-decoration: none;
-
-}
-
-.archive_card_info_label{
-    background-color: wheat;
-}
-.archive_card_info_txt{
-    background-color: palegreen;
-}
-/* 섹션 partnership ---------------------------------------------- */
-.partnership{
-    background-color: skyblue;
-}
-    .partnership_wrap{
-    background-color: ;
-    padding: 30px 200px;
-
-    }
-        .partnership_wrap h1{
-            font-size: 50px;
-            background-color: aqua;
-            padding-bottom: 30px;
-            }
-        /* 서울페스티벌----------------- */
-        .seoulfestival_wrap{
-        background-color: tomato;
+		.bcg04{
+            background: url(/img/apms/background/mainbg_04.png) no-repeat top / cover;
+            height: 350px;
         }
-            
-            .festival_imgbox{
-            background-color: greenyellow;
-            display: flex;
-            align-items: center;
-            padding: 20px 0;
-            height: 100px;
-            gap: 30px;
-            }
-            .festival_imgbox>li{
-                list-style: none;
-            }
-                .festival_imgbox>li>img{
-                object-fit: contain;
-                width: 130px;
-                height: 60px;   
-            }
-        /* 광화문마켓----------------- */
-        .gwanghwamun_wrap{
-            background-color: gold;
+        /* section 아카이브 */
+		.archive{
+			background-color: tomato;
+            position: relative;
+		}
+		.archive_wrap{
+			background-color: palegreen;
+			padding: 90px 180px;
+		}
+		.archive_wrap > h1{
+			font-size: 70px;
+		}
+
+		.archive_card_title_wrap{
+			background-color: violet;
+			display: flex;
+			gap: 30px;
+			padding: 0;
+			margin: 0 0 70px 0;
+			list-style: none;
+		}
+
+		.archive_card_title_wrap > li{
+			border: none;
+			font-size: 23px;
+		}
+
+		/* 탭 버튼 */
+		.archive_title{
+			cursor: pointer;
+			padding-bottom: 10px;
+			user-select: none;
+		}
+		.archive_title.is-active{
+			border-bottom: 1px solid blue;
+		}
+
+		/* swiper container */
+		.archive_swiper_container{
+            overflow: hidden;
+		}
+
+		.archive_swiper{
+			overflow: visible;
+			width: 100%;
+		}
+
+		/* ✅ Swiper 줄바꿈 방지 */
+		.archive_swiper .swiper-wrapper{
+			display: flex !important;
+			flex-wrap: nowrap !important;
+		}
+        /* Swiper 기본 화살표 제거 */
+        .swiper-button-prev::after,
+        .swiper-button-next::after{
+            display: none !important;
         }
-            .market_imgbox{
-                background-color: hotpink;
-                display: flex;
-                align-items: center;
-                padding: 20px 0;
-                height: 100px;
-                gap: 30px;
 
 
-            }
-                .market_imgbox>li{
-                    list-style: none;
-                }
-                    .market_imgbox>li>img{
-                        object-fit: contain;
-                        width: 130px;
-                        height: 60px;   
-                    }
+		/* 카드 */
+		.archive_card_slide_wrap{
+			background-color: gold;
+			width: 466px;
+			height: 450px;
+			border-radius: 20px;
+			overflow: hidden;
+		}
+		.archive_card_slide_wrap > a{
+			text-decoration: none;
+			display: block;
+		}
+
+		.thumb{
+			width: 100%;
+			height: 350px;
+			border-radius: 20px 20px 0 0;
+			overflow: hidden;
+		}
+
+		.archive_card_info_wrap{
+			background-color: greenyellow;
+			margin: 20px;
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+		}
+
+		.archive_card_info_label{
+			font-size: 15px;
+			border: 1px solid red;
+			border-radius: 10px;
+			background-color: red;
+			color: #fafafa;
+			width: fit-content;
+			padding: 0 8px;
+		}
+
+		.archive_card_info_txt{
+			background-color: palegreen;
+			font-size: 20px;
+		}
+
+		.archive_swiper_container .swiper-button-next,
+		.archive_swiper_container .swiper-button-prev{
+			position: absolute;
+            top: 70%;
+            transform: translateY(-50%);
+            z-index: 9999;
+
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+
+            cursor: pointer;
+
+		}
+
+        .archive_swiper_container .swiper-button-prev{
+            left: 160px;
+        }
+
+        .archive_swiper_container .swiper-button-next{
+            right: 150px;
+        }
+
+		/* 섹션 partnership ------------------------------------------- */
+		.partnership{
+			background-color: skyblue;
+		}
+		.partnership_wrap{
+			padding: 150px 200px;
+		}
+		.partnership_wrap h1{
+			font-size: 70px;
+			background-color: aqua;
+			margin-bottom: 100px;
+		}
+
+		.festival_imgbox,
+		.market_imgbox{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		/* 서울페스티벌 */
+		.seoulfestival_wrap{
+			background-color: tomato;
+		}
+		.festival_imgbox{
+			background-color: greenyellow;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 20px 0;
+			height: 100px;
+			gap: 30px;
+		}
+		.festival_imgbox > li > img{
+			object-fit: contain;
+			width: 130px;
+			height: 60px;
+		}
+
+		/* 광화문마켓 */
+		.gwanghwamun_wrap{
+			background-color: gold;
+		}
+		.market_imgbox{
+			background-color: hotpink;
+			display: flex;
+			align-items: center;
+			padding: 20px 0;
+			height: 100px;
+			gap: 55px;
+		}
+		.market_imgbox > li > img{
+			object-fit: contain;
+			width: 160px;
+			height: 80px;
+		}
