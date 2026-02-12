@@ -14,15 +14,24 @@ img{max-width: 100%; vertical-align: top;}
     z-index: 9999;
     height: 95px;
 
-    /* background-color: aqua; */
 
     display: flex;
     align-items: center;
     transition: background-color 0.2s ease;
 
+    background-color: transparent;
+
 }
+
     .header:hover{
-        background-color: bisque;
+        background-color: #efe9e1;
+    }
+
+    .header:hover .header_wrap,
+    .header:hover .nav,
+    .header:hover .nav_menus,
+    .header:hover .icon_wrap{
+        background-color: #efe9e1;
     }
 
     /* 헤더 호버 시 생기는 얇은 회색선 */
@@ -52,7 +61,7 @@ img{max-width: 100%; vertical-align: top;}
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: #efe9e1;
+        background-color: transparent;
         width: 100%;
         padding: 0 50px;
 
@@ -82,8 +91,7 @@ img{max-width: 100%; vertical-align: top;}
  /* ----------------------------------------------------- */
         /* 메뉴스의 nav */
         .nav{
-            /* background-color: rgb(162, 162, 224); */
-            background-color: #efe9e1;
+            background-color: transparent;
             flex: 1; /* 0 1 0 으로 자리 먹기  */
             display: flex;
             align-items: center;
@@ -122,8 +130,7 @@ img{max-width: 100%; vertical-align: top;}
                 .nav_menus{
                     position: relative; /* 밑에 스케일 선 기준 잡기 */
                     height: 95px;
-                    /* background-color: rgb(214, 212, 60); */
-                    background-color: #efe9e1;
+                    background-color: transparent;
                     display: flex;
                     align-items: center;
                 }
@@ -208,7 +215,7 @@ img{max-width: 100%; vertical-align: top;}
                                 right: 0;
                                 bottom: -20%;
                                 height: 1px;
-                                background-color: #796655;
+                                background-color: #a39182;
 
                                 transform: scaleX(0);
                                 transform-origin: center; 
@@ -223,7 +230,7 @@ img{max-width: 100%; vertical-align: top;}
         /* 아이콘 */
         .icon_wrap{
             /* background-color: blueviolet; */
-            background-color: #efe9e1;
+            background-color: transparent;
             display: flex;
             align-items: center;
             gap: 30px;
@@ -260,8 +267,8 @@ img{max-width: 100%; vertical-align: top;}
                         display: flex;
                     }
                     .lang_ul>li>a{
-                    font-size: 18px;
-                    font-weight: 500;
+                    font-size: 15px;
+                    font-weight: 800;
                     text-decoration: none;
                     color: #796655;
                     display: flex;
@@ -334,7 +341,9 @@ img{max-width: 100%; vertical-align: top;}
                         border: none;
                         font-size: 16px;
                         margin: 10px 3px;
+                        outline: none;
                     }
+
                     .search_btn{
                         width: 20px;
                         height: 20px;
@@ -490,13 +499,13 @@ img{max-width: 100%; vertical-align: top;}
                                     content: "/";
                                     display: inline-block;
                                     margin: 0 10px;
-                                    color: #7a6455;
-                                    font-size: 23px;
+                                    color:#8c7766;
+                                    font-size: 20px;
                                 }
                                     .ham_menus_sub_li>a{
                                         text-decoration: none;
-                                        font-size: 23px;
-                                        color: #7a6455;
+                                        font-size: 20px;
+                                        color:#8c7766;
                                         font-weight: 650;
 
                                         position: relative;
