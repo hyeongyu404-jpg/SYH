@@ -1,5 +1,4 @@
 footer{
-    /* background-color: rgb(58, 50, 42); */
     background-color: #2D201B;
     width: 100%;
     height: 300px;
@@ -7,7 +6,6 @@ footer{
     .footer_wrap{
         margin: 0 auto;
         background-color: #2D201B;
-        /* background-color: aqua; */
         width: 97%;
         min-height: 200px;
         display: flex;
@@ -17,7 +15,6 @@ footer{
     }
         .footer_info{
             background-color: #2D201B;
-            /* background-color: gold; */
             display: flex;
             align-items: start;
             gap: 20px;
@@ -27,7 +24,6 @@ footer{
 
         .info_details{
             line-height: 1.8;
-            /* background-color: pink; */
             padding: 0;
             line-height: 1.4;
             color: #8b8787;
@@ -53,17 +49,58 @@ footer{
             font-weight: 500;
         }
 
-        .sns_logo>li{
-            list-style: none;
-        }
+
 
 
 /* 후터 오른쪽 --------------------------------------------- */  
-        .sns_logo{
+         .seoul_logo{
+            margin-top: 100px;
+        }    
+           /* sns 로고 */
+           .sns_logo{
             display: flex;
             justify-content: end;
             gap: 10px;
         }
-        .seoul_logo{
-            margin-top: 100px;
+
+            .sns_logo > li{
+            list-style: none;
         }
+        /* 호버 배경 사진 있는 애들
+        페이스북, 네이버-------------------- */
+        .sns_hover a{
+            position: relative;
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+        }
+
+        .sns_hover .off,
+        .sns_hover .on{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .sns_hover .on{
+            display: none;
+        }
+
+        .sns_hover:hover .on{
+            display: block;
+        }
+
+        .sns_hover:hover .off{
+            display: none;
+        }
+
+
+
+
+
+
