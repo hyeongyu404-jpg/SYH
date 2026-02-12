@@ -396,7 +396,7 @@ img{max-width: 100%; vertical-align: top;}
         /* --------------------------------------------------- */
         /* 햄버거 메뉴 페이지 */
         .hambutton_page{
-            background-color: pink;
+            /* background-color: pink; */
             position: fixed;
             top: 0;
             left: 0;
@@ -463,7 +463,6 @@ img{max-width: 100%; vertical-align: top;}
                         }
             /* ----hambutton_menu_inner 하단 */
             .hambutton_menu_inner{
-                background-color: aqua;
                 margin-top: 200px;
             }
                 .hambutton_menus_ul{
