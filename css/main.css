@@ -1,9 +1,68 @@
+/* 섹션 leaflet-faq------------------------------------------- */
+.leaflet-faq{
+background-color: aqua;
+}
+.leaflet-faq_wrap{
+background-color: pink;
+padding: 80px 180px;
+margin: 0 auto;
+}
+.leaflet-faq_contents{
+background-color: tomato;
+display: flex;
+flex-direction: column;
+gap: 20px;
+color: #fafafa;
+}
 
+.leaflet-faq_contents h1{
+	font-size: 70px;
+	padding: 0;
+	margin: 0;
+}
+.leaflet-faq_titlecontainer{
+background-color: sandybrown;
+display: flex;
+gap: 30px;
+align-items: stretch;
+}
+.title_box{
+background-color: gold;
+
+padding: 20px 50px;
+border-radius: 20px;
+
+flex: 1;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.title_text h3{
+	font-weight: 400;
+}
+.a_box{
+	background-color: aqua;
+}
+.a_box>a{
+	border: 1px solid blue;
+	border-radius: 20px;
+	padding: 7px 25px;
+	text-decoration: none;
+	font-size: 15px;
+	font-weight: 600;
+	color: #fafafa;
+}
+.a_box>a:hover{
+	background-color: #fafafa;
+	color: transparent;
+}
+
+/* 배경 ------------------------------------------- */
 		.bcg04{
             background: url(/img/apms/background/mainbg_04.png) no-repeat top / cover;
             height: 350px;
         }
-        /* section 아카이브 */
+/* 섹션 archive ------------------------------------------- */
 		.archive{
 			background-color: tomato;
             position: relative;
@@ -125,10 +184,10 @@
         }
 
         .archive_swiper_container .swiper-button-next{
-            right: 150px;
+            right: 167px;
         }
 
-		/* 섹션 partnership ------------------------------------------- */
+/* 섹션 partnership ------------------------------------------- */
 		.partnership{
 			background-color: skyblue;
 		}
