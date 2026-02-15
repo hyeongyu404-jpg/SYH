@@ -1,9 +1,77 @@
+/* 섹션 히어로  */
+.hero{
+	position: relative;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.hero_slide{
+	position: absolute;
+	inset: 0;
+
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	opacity: 0;
+	transition: opacity 800ms ease;
+}
+
+.hero_slide:nth-child(1){
+	background-image: url('/img/apms/background/hero01.png');
+}
+
+.hero_slide:nth-child(2){
+	background-image: url('/img/apms/background/hero02.png');
+}
+
+.hero_slide.is-active{
+	opacity: 1;
+}
+
+/* 확대 */
+.hero_slide.is-active.is-zoom{
+	animation: zoom 6s linear forwards;
+}
+
+@keyframes zoom{
+	from { transform: scale(1); }
+	to { transform: scale(1.12); }
+}
+
+
+/* 진행 점 */
+.hero_dots{
+	position: absolute;
+	right: 40px;
+	top: 50%;
+	transform: translateY(-50%);
+
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	z-index: 5;
+}
+
+.hero_dot{
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: 1px solid white;
+	background: transparent;
+	cursor: pointer;
+}
+
+.hero_dot.is-active{
+	background: white;
+}
+
 /* 섹션 섹션 02 서울빛초롱 & 광화문 마켓 ------------- */
 
 .main_02{
 	background: #31231e;
 	padding: 90px 180px;
-
+	position: relative;
 }
 
 .main_02_wrap{
@@ -159,26 +227,24 @@
 }
 
 
-/* 백그라운드 트리 집  ------------------------------------------- */
-.bg03{
-	position: relative;
+/* 백그라운드 빨간 웨이브 ------------------------------------------- */
+.bcg02{
 	width: 100%;
-	height: 520px;          
-	overflow: hidden;
+	height: 400px;   
 }
 
-.bg03 img{
+.bcg02 img{
 	position: absolute;
 	left: 0;
 	bottom: 0;
 	width: 100%;
 	height: auto;
-	display: block;
+	overflow: hidden;
 }
 /* 섹션 스트럭쳐 ------------------------------------------- */
 .main_structure {
-	background: #efece5;
-	padding: 100px 180px;
+	background: rgb(236, 233, 223);
+	padding: 10px 180px;
 }
 
 .main_structure_wrap {
@@ -334,11 +400,14 @@
 	color: #fff;
 }
 
-
+/* 배경 ------------------------------------------- */
+.bcg03 {
+	background: url(/img/apms/background/mainbg_03.png) no-repeat bottom / cover;
+	height: 350px;
+}
 /* 섹션 socialmedia */
 .socialmedia {
-	background-color: #8b1f1f;
-	/* 너가 원하는 레드로 바꿔 */
+	background-color: #991510;
 	padding: 80px 180px;
 	position: relative;
 }
@@ -391,11 +460,13 @@
 	overflow: hidden;
 }
 
-.socialmedia_thumb {
+.socialmedia_thumb{
 	width: 100%;
-	height: 380px;
+	height: 450px;
+	background-size: contain;   
+	background-position: center;
+	background-repeat: no-repeat;
 }
-
 
 /* 화살표 버튼 */
 .socialmedia_swiper_container .swiper-button-prev,
@@ -419,6 +490,62 @@
 }
 
 
+/* 인스타아이콘------------------------------------------- */
+.sns_go_wrap{
+	background-color: #991510;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+	padding: 14px 0;
+}
+
+/* pill 공통 */
+.sns_pill{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center; 
+	gap: 10px;
+
+	width: 250px;  
+	padding: 12px 22px;
+	border-radius: 999px;
+
+	border: 1px solid rgba(255,255,255,0.25);
+	background: transparent;
+
+	color: rgba(255,255,255,0.85);
+	text-decoration: none;
+	font-size: 20px;
+	line-height: 1;
+
+	transition: background-color .18s ease,
+		color .18s ease,
+		border-color .18s ease,
+		transform .18s ease;
+}
+
+.sns_pill img{
+	width: 22px;
+	height: 22px;
+	display: block;
+
+	
+	filter: brightness(0) invert(1);
+	transition: filter .18s ease;
+}
+
+.sns_pill:hover{
+	background-color: #ffffff;
+	border-color: #ffffff;
+	color: #3b2f2a;
+	transform: translateY(-1px);
+}
+
+.sns_pill:hover img{
+	filter: none; 
+}
+
 
 /* 섹션 leaflet-faq------------------------------------------- */
 .leaflet-faq {
@@ -426,13 +553,13 @@
 }
 
 .leaflet-faq_wrap {
-	background-color: pink;
+	background-color: #991510;
 	padding: 80px 180px;
 	margin: 0 auto;
 }
 
 .leaflet-faq_contents {
-	background-color: tomato;
+	background-color: #991510;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
@@ -446,14 +573,14 @@
 }
 
 .leaflet-faq_titlecontainer {
-	background-color: sandybrown;
+	background-color: #991510;
 	display: flex;
 	gap: 30px;
 	align-items: stretch;
 }
 
 .title_box {
-	background-color: gold;
+	background-color: #b83732;
 
 	padding: 20px 50px;
 	border-radius: 20px;
@@ -469,11 +596,11 @@
 }
 
 .a_box {
-	background-color: aqua;
+	background-color: #b83732;
 }
 
 .a_box>a {
-	border: 1px solid blue;
+	border: 1px solid #fafafa;
 	border-radius: 20px;
 	padding: 7px 25px;
 	text-decoration: none;
@@ -500,16 +627,18 @@
 }
 
 .archive_wrap {
-	background-color: palegreen;
-	padding: 90px 180px;
+	background-color: rgb(236, 233, 223);
+	padding: 1px 180px;
 }
 
 .archive_wrap>h1 {
 	font-size: 70px;
+ 	color: #5b4a3d;
+
 }
 
 .archive_card_title_wrap {
-	background-color: violet;
+	background-color: rgb(236, 233, 223);
 	display: flex;
 	gap: 30px;
 	padding: 0;
@@ -526,11 +655,12 @@
 .archive_title {
 	cursor: pointer;
 	padding-bottom: 10px;
-	user-select: none;
+	color: #5b4a3d;
 }
 
 .archive_title.is-active {
-	border-bottom: 1px solid blue;
+	border-bottom: 2px solid #b83732;
+	color: #d31812;
 }
 
 /* swiper container */
@@ -543,7 +673,7 @@
 	width: 100%;
 }
 
-/* ✅ Swiper 줄바꿈 방지 */
+/* 줄바꿈 방지 */
 .archive_swiper .swiper-wrapper {
 	display: flex !important;
 	flex-wrap: nowrap !important;
@@ -558,13 +688,12 @@
 
 /* 카드 */
 .archive_card_slide_wrap {
-	background-color: gold;
+	background-color: rgb(236, 233, 223);
 	width: 466px;
 	height: 450px;
 	border-radius: 20px;
 	overflow: hidden;
 }
-
 .archive_card_slide_wrap>a {
 	text-decoration: none;
 	display: block;
@@ -575,10 +704,20 @@
 	height: 350px;
 	border-radius: 20px 20px 0 0;
 	overflow: hidden;
+
+	transition: transform .3s ease;
+}
+
+.archive_card_slide_wrap:hover{
+	background-color: rgba(189, 189, 188, 0.623);  
+}
+
+.archive_card_slide_wrap:hover .thumb{
+	transform: scale(1.04); 
 }
 
 .archive_card_info_wrap {
-	background-color: greenyellow;
+	background-color: transparent;
 	margin: 20px;
 	display: flex;
 	flex-direction: column;
@@ -587,17 +726,17 @@
 
 .archive_card_info_label {
 	font-size: 15px;
-	border: 1px solid red;
 	border-radius: 10px;
-	background-color: red;
+	background-color: #d31812;
 	color: #fafafa;
 	width: fit-content;
-	padding: 0 8px;
+	padding: 1px 8px;
 }
 
 .archive_card_info_txt {
-	background-color: palegreen;
+	background-color: transparent;
 	font-size: 20px;
+	color: #504944;
 }
 
 .archive_swiper_container .swiper-button-next,
@@ -625,17 +764,19 @@
 
 /* 섹션 partnership ------------------------------------------- */
 .partnership {
-	background-color: skyblue;
+	background-color: rgb(236, 233, 223);
 }
 
 .partnership_wrap {
-	padding: 150px 200px;
+	padding: 70px 200px;
 }
 
 .partnership_wrap h1 {
 	font-size: 70px;
-	background-color: aqua;
+	background-color: rgb(236, 233, 223);
 	margin-bottom: 100px;
+ 	color: #5b4a3d;
+
 }
 
 .festival_imgbox,
@@ -647,11 +788,15 @@
 
 /* 서울페스티벌 */
 .seoulfestival_wrap {
-	background-color: tomato;
+	background-color: rgb(236, 233, 223);
+	
 }
-
+.seoulfestival_wrap h2{
+	color: #5b4a3d;
+	font-size: 40px;
+}
 .festival_imgbox {
-	background-color: greenyellow;
+	background-color: rgb(236, 233, 223);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -668,11 +813,16 @@
 
 /* 광화문마켓 */
 .gwanghwamun_wrap {
-	background-color: gold;
+	background-color: rgb(236, 233, 223);
+	margin-top: 50px;
 }
+.gwanghwamun_wrap h2{
+	color: #5b4a3d;
+	font-size: 40px;
 
+}
 .market_imgbox {
-	background-color: hotpink;
+	background-color: rgb(236, 233, 223);
 	display: flex;
 	align-items: center;
 	padding: 20px 0;

@@ -1,3 +1,43 @@
+//섹션 01 자바스크립트로 함
+(() => {
+	const hero = document.querySelector("#hero");
+	const slides = hero.querySelectorAll(".hero_slide");
+	const dots = hero.querySelectorAll(".hero_dot");
+
+	let index = 0;
+	const total = slides.length;
+
+	const interval = 6000;
+	let timer;
+
+	function show(i){
+		index = (i + total) % total;
+
+		slides.forEach((s, idx)=>{
+			s.classList.toggle("is-active", idx === index);
+		});
+
+		dots.forEach((d, idx)=>{
+			d.classList.toggle("is-active", idx === index);
+		});
+	}
+
+	function start(){
+		timer = setInterval(()=>{
+			show(index + 1);
+		}, interval);
+	}
+
+	dots.forEach(dot=>{
+		dot.addEventListener("click", ()=>{
+			show(Number(dot.dataset.index));
+		});
+	});
+
+	show(0);
+	start();
+})();
+
 // 섹션 main structure 스와이퍼 말고 자바스크립트로 함
 const data = {
 			1: [
@@ -139,20 +179,20 @@ const SOCIAL_DATA = [
 		{ img: "./img/apms/title/260117_빛초롱_릴스.png"},
 		{ img: "./img/apms/title/260115_빛초롱_스케치.png"},
 		{ img: "./img/apms/title/260113_빛초롱.png"},
-		{ img: "./img/apms/title/260109_빛초롱.png"},
-		{ img: "./img/apms/title/닉네임 짓기 당발.png"},
-		{ img: "./img/apms/title/재개장 사진 콘텐츠.png"},
-		{ img: "./img/apms/title/빛초롱_20251231_안내.png"}
+		{ img: "./img/apms/title/260119_빛초롱_종료.png"},
+		{ img: "./img/apms/title/260117_빛초롱_릴스.png"},
+		{ img: "./img/apms/title/260115_빛초롱_스케치.png"},
+		{ img: "./img/apms/title/260113_빛초롱.png"}
 	],
 	[
 		{ img: "./img/apms/title/260119_빛초롱_종료.png"},
 		{ img: "./img/apms/title/260117_빛초롱_릴스.png"},
 		{ img: "./img/apms/title/260115_빛초롱_스케치.png"},
 		{ img: "./img/apms/title/260113_빛초롱.png"},
-		{ img: "./img/apms/title/260109_빛초롱.png"},
-		{ img: "./img/apms/title/주제맞추기 이벤트.png"},
-		{ img: "./img/apms/title/재개장 사진 콘텐츠.png"},
-		{ img: "./img/apms/title/빛초롱_20251231_안내.png"}
+		{ img: "./img/apms/title/260119_빛초롱_종료.png"},
+		{ img: "./img/apms/title/260117_빛초롱_릴스.png"},
+		{ img: "./img/apms/title/260115_빛초롱_스케치.png"},
+		{ img: "./img/apms/title/260113_빛초롱.png"}
 	],
 ];
 
@@ -161,21 +201,36 @@ const socialTabs = document.querySelectorAll(".socialmedia_title");
 
 let socialSwiper = null;
 
+
+/* 슬라이드 */
 function renderSocialSlides(tabIndex){
-	const items = SOCIAL_DATA[tabIndex] || [];
-	socialWrapper.innerHTML = items.map((item) => {
-		return `
-			<div class="swiper-slide">
-				<div class="socialmedia_card">
-					<div class="socialmedia_thumb" style="background:url(${item.img}) center/cover no-repeat;"></div>
-					<div class="socialmedia_hash">${item.hashtag}</div>
-				</div>
-			</div>
-		`;
-	}).join("");
+
+	const items = SOCIAL_DATA[tabIndex];
+
+	socialWrapper.innerHTML = "";
+
+	items.forEach((item) => {
+
+		const slide = document.createElement("div");
+		slide.classList.add("swiper-slide");
+
+		const card = document.createElement("div");
+		card.classList.add("socialmedia_card");
+
+		const thumb = document.createElement("div");
+		thumb.classList.add("socialmedia_thumb");
+		thumb.style.background = `url(${item.img}) center/cover no-repeat`;
+
+		card.appendChild(thumb);
+		slide.appendChild(card);
+		socialWrapper.appendChild(slide);
+	});
 }
 
+
+/* 스와이퍼 */
 function initSocialSwiper(){
+
 	if (socialSwiper){
 		socialSwiper.destroy(true, true);
 		socialSwiper = null;
@@ -184,25 +239,24 @@ function initSocialSwiper(){
 	socialSwiper = new Swiper("#socialmediaSwiper", {
 		slidesPerView: 4,
 		spaceBetween: 30,
-		slidesPerGroup: 1,
 		speed: 600,
 		navigation: {
 			nextEl: ".socialmedia_swiper_container .swiper-button-next",
 			prevEl: ".socialmedia_swiper_container .swiper-button-prev",
 		},
-		observer: true,
-		observeParents: true,
-		autoplay: false,
 	});
 }
 
-/* 최초 로드 */
+
+/* 처음 실행 */
 renderSocialSlides(0);
 initSocialSwiper();
+
 
 /* 탭 클릭 */
 socialTabs.forEach((tab) => {
 	tab.addEventListener("click", () => {
+
 		const idx = Number(tab.dataset.tab);
 
 		socialTabs.forEach((t) => t.classList.remove("is-active"));
@@ -210,9 +264,10 @@ socialTabs.forEach((tab) => {
 
 		renderSocialSlides(idx);
 		initSocialSwiper();
-		socialSwiper.slideTo(0, 0);
+		socialSwiper.slideTo(0);
 	});
 });
+
 
 // 섹션 archive
 const ARCHIVE_DATA = [
@@ -259,7 +314,7 @@ const ARCHIVE_DATA = [
 					<div class="swiper-slide">
 						<div class="archive_card_slide_wrap">
 							<a href="#">
-								<div class="thumb" style="background:url(${item.img})center/cover no-repeat;"></div>
+								<div class="thumb" style="background:url(${item.img}) center/cover no-repeat;"></div>
 								<div class="archive_card_info_wrap">
 									<span class="archive_card_info_label">${item.label}</span>
 									<div class="archive_card_info_txt">${item.txt}</div>
