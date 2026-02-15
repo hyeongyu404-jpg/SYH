@@ -1,5 +1,5 @@
 // 글로벌버튼--------------------------------------
-    // 글로벌버튼 토글
+
 const searchBtn = document.getElementById("global_btn");
 const langUl = document.querySelector(".lang_ul");
 
