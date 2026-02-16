@@ -18,11 +18,11 @@
 }
 
 .hero_slide:nth-child(1){
-	background-image: url('/img/apms/background/hero01.png');
+	background-image: url('/img/S-main/hero01.png');
 }
 
 .hero_slide:nth-child(2){
-	background-image: url('/img/apms/background/hero02.png');
+	background-image: url('/img/S-main/hero01.png');
 }
 
 .hero_slide.is-active{
@@ -402,7 +402,7 @@
 
 /* 배경 ------------------------------------------- */
 .bcg03 {
-	background: url(/img/apms/background/mainbg_03.png) no-repeat bottom / cover;
+	background: url(/img/S-main/mainbg_03.png) no-repeat bottom / cover;
 	height: 350px;
 }
 /* 섹션 socialmedia */
@@ -616,7 +616,7 @@
 
 /* 배경 ------------------------------------------- */
 .bcg04 {
-	background: url(/img/apms/background/mainbg_04.png) no-repeat top / cover;
+	background: url(/img/S-main/mainbg_04.png) no-repeat top / cover;
 	height: 350px;
 }
 

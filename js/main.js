@@ -42,21 +42,21 @@
 const data = {
 			1: [
 				{
-					img: "./img/apms/background/structure01.png",
+					img: "./img/S-main/structure01.png",
 					title: "시등의 순간",
 					desc: "1887년 3월, 경복궁 건청궁에서 밝혀진 최초의 전등을 LED 영상과 한지 등(燈)을 통해 재현합니다.",
 					spot: "청계광장~광통교",
 					alt: "시등의 순간"
 				},
 				{
-					img: "./img/apms/background/structure02.png",
+					img: "./img/S-main/structure02.png",
 					title: "갓",
 					desc: "힙한 트렌드로 재조명된 조선시대 선비의 ‘갓’을 모티브로 한 조명 연출로, 전통과 현대가 어우러진 글로벌 한국 문화를 선보입니다.",
 					spot: "광통교~광교",
 					alt: "갓"
 				},
 				{
-					img: "./img/apms/background/structure03.png",
+					img: "./img/S-main/structure03.png",
 					title: "청계의 빛 : 청계천의 과거",
 					desc: "청계천 복원 20주년을 기념하여 제작된 서울빛초롱축제 특별전 작품입니다.",
 					spot: "광교~장통교",
@@ -66,21 +66,21 @@ const data = {
 
 			2: [
 				{
-					img: "./img/apms/background/market01.jpg",
+					img: "./img/S-main/market01.jpg",
 					title: "산타마을 곳곳에 마련된 크리스마스 포토존을 찾아 행복한 추억을 남겨보세요.",
 					desc: "겨울동화 속 산타마을의 시작을 알리는 공간! 포토존과 마켓 전경을 배경으로 순간을 담아보세요.",
 					spot: "산타마을 입구, 산타마을 놀이광장, 산타마을 마켓 빌리지",
 					alt: "산타마을 포토존"
 				},
 				{
-					img: "./img/apms/background/market02.png",
+					img: "./img/S-main/market02.png",
 					title: "① 산타마을 동화책",
 					desc: "마켓 입구에서 만나볼 수 있는 동화책 콘셉트 조형물! 동화 속 주인공처럼 사진을 남겨보세요.",
 					spot: "산타마을 입구, 산타마을 놀이광장, 산타마을 마켓 빌리지",
 					alt: "산타마을 동화책"
 				},
 				{
-					img: "./img/apms/background/market03.png",
+					img: "./img/S-main/market03.png",
 					title: "② 호두까기 인형의 집",
 					desc: "연극의 한 장면 같은 포토존에서 사진을 찍어보세요. 무대 속 주인공이 된 듯한 기분을 느낄 수 있어요!",
 					spot: "산타마을 입구, 산타마을 놀이광장, 산타마을 마켓 빌리지",
@@ -272,33 +272,33 @@ socialTabs.forEach((tab) => {
 // 섹션 archive
 const ARCHIVE_DATA = [
 			[
-				{ img: "./img/apms/title/thumb01.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 팔마" },
-				{ img: "./img/apms/title/thumb02.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 시등의 순간" },
-				{ img: "./img/apms/title/thumb03.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 옛빛+최초의 전화기" },
-				{ img: "./img/apms/title/thumb04.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 움직이는 빛" },
-				{ img: "./img/apms/title/thumb05.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 빛의 선물" },
-				{ img: "./img/apms/title/thumb06.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 랜드마크" },
+				{ img: "./img/S-main/thumb01.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 팔마" },
+				{ img: "./img/S-main/thumb02.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 시등의 순간" },
+				{ img: "./img/S-main/thumb03.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 옛빛+최초의 전화기" },
+				{ img: "./img/S-main/thumb04.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 움직이는 빛" },
+				{ img: "./img/S-main/thumb05.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 빛의 선물" },
+				{ img: "./img/S-main/thumb06.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 랜드마크" },
 			],
 			[
-				{ img: "./img/apms/title/thumb01.png", label: "서울빛초롱축제", txt: "2번째 사진" },
-				{ img: "./img/apms/title/thumb02.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 시등의 순간" },
-				{ img: "./img/apms/title/thumb03.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 옛빛+최초의 전화기" },
-				{ img: "./img/apms/title/thumb04.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 움직이는 빛" },
-				{ img: "./img/apms/title/thumb05.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 빛의 선물" },
-				{ img: "./img/apms/title/thumb06.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 랜드마크" },
+				{ img: "./img/S-main/thumb01.png", label: "서울빛초롱축제", txt: "2번째 사진" },
+				{ img: "./img/S-main/thumb02.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 시등의 순간" },
+				{ img: "./img/S-main/thumb03.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 옛빛+최초의 전화기" },
+				{ img: "./img/S-main/thumb04.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 움직이는 빛" },
+				{ img: "./img/S-main/thumb05.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 빛의 선물" },
+				{ img: "./img/S-main/thumb06.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 랜드마크" },
 			],
 			[
-				{ img: "./img/apms/title/thumb01.png", label: "광화문 마켓", txt: "3번째 사진" },
-				{ img: "./img/apms/title/thumb02.png", label: "광화문 마켓", txt: "2025 광화문 마켓, 시등의 순간" },
-				{ img: "./img/apms/title/thumb03.png", label: "광화문 마켓", txt: "2025 광화문 마켓, 옛빛+최초의 전화기" },
-				{ img: "./img/apms/title/thumb04.png", label: "광화문 마켓", txt: "2025 광화문 마켓, 움직이는 빛" },
-				{ img: "./img/apms/title/thumb05.png", label: "광화문 마켓", txt: "2025 광화문 마켓, 빛의 선물" },
-				{ img: "./img/apms/title/thumb06.png", label: "광화문 마켓", txt: "2025 광화문 마켓, 랜드마크" },
+				{ img: "./img/S-main/thumb01.png", label: "광화문 마켓", txt: "3번째 사진" },
+				{ img: "./img/S-main/thumb02.png", label: "광화문 마켓", txt: "2025 광화문 마켓, 시등의 순간" },
+				{ img: "./img/S-main/thumb03.png", label: "광화문 마켓", txt: "2025 광화문 마켓, 옛빛+최초의 전화기" },
+				{ img: "./img/S-main/thumb04.png", label: "광화문 마켓", txt: "2025 광화문 마켓, 움직이는 빛" },
+				{ img: "./img/S-main/thumb05.png", label: "광화문 마켓", txt: "2025 광화문 마켓, 빛의 선물" },
+				{ img: "./img/S-main/thumb06.png", label: "광화문 마켓", txt: "2025 광화문 마켓, 랜드마크" },
 			],
 			[
-				{ img: "./img/apms/title/thumb01.png", label: "광화문 마켓", txt: "광화문 마켓 역대 사진 1" },
-				{ img: "./img/apms/title/thumb02.png", label: "광화문 마켓", txt: "광화문 마켓 역대 사진 2" },
-				{ img: "./img/apms/title/thumb03.png", label: "광화문 마켓", txt: "광화문 마켓 역대 사진 3" },
+				{ img: "./img/S-main/thumb01.png", label: "광화문 마켓", txt: "광화문 마켓 역대 사진 1" },
+				{ img: "./img/S-main/thumb02.png", label: "광화문 마켓", txt: "광화문 마켓 역대 사진 2" },
+				{ img: "./img/S-main/thumb03.png", label: "광화문 마켓", txt: "광화문 마켓 역대 사진 3" },
 			],
 		];
 
