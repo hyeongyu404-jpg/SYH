@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>역대 사진</title>
+    <style>
+      @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        user-select: none;
+      }
+      body {
+        width: 100%;
+        overflow-x: hidden;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #333333;
+        font-family: 'NanumSquare', serif;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      header {
+        position: fixed;
+        width: 100%;
+        height: 87px;
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 0 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .menu {
+        display: flex;
+        gap: 3rem;
+      }
+      .hero {
+        width: 100%;
+        height: 100vh;
+        background-image: url(/src/images/m04_top.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .page-header {
+        position: absolute;
+        left: 14%;
+        top: 42%;
+      }
+      .page-header__breadcrumb {
+        color: #ffffff;
+        font-size: 1.1rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 1.1rem;
+      }
+      .bar {
+        display: block;
+        width: 1px;
+        height: 0.8rem;
+        background-color: white;
+      }
+      .page-header__title {
+        color: #ffffff;
+        font-size: 4.6rem;
+        font-weight: 700;
+        padding-top: 1.4rem;
+      }
+
+      /* 검색 */
+      .section-premier {
+        width: 1430px;
+        margin: 0 auto;
+        font-size: 1rem;
+        color: #000;
+        padding: 4rem 0;
+      }
+      .title {
+        font-size: 1.9rem;
+        font-weight: bold;
+        margin-bottom: 3rem;
+      }
+      .search-wrap {
+        text-align: right;
+      }
+      /* option의 dropdown arrow는 커스텀필요 */
+      .select-style {
+        width: 100px;
+        height: 50px;
+        padding: 0.8rem;
+        border: none;
+        border-radius: 20px;
+        background-color: #f5f5f5;
+        font-size: 0.9rem;
+        color: #5d5d5d;
+        overflow: hidden;
+        box-sizing: border-box;
+        margin-bottom: 2rem;
+      }
+      .search-input {
+        width: 320px;
+        height: 50px;
+        border: 0;
+        border-radius: 20px;
+        background-color: #f5f5f5;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+      }
+
+      /* 탭메뉴 */
+      .tab-menu {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      /* 연도 */
+      .year {
+        width: 70px;
+        padding: 0;
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 2rem;
+      }
+
+      /* 갤러리 */
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+      }
+      .item {
+        width: 32%;
+        background-color: #ededed;
+        border-radius: 20px;
+        margin-bottom: 1.5rem;
+        overflow: hidden;
+      }
+      .item > div:first-of-type {
+        width: 100%;
+        height: 340px;
+        overflow: hidden;
+      }
+      .item > div:first-of-type > img {
+        width: 100%;
+        object-fit: cover;
+      }
+      .item > div:last-of-type {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 12px;
+        padding-bottom: 0.5rem;
+      }
+
+      .item > div:last-of-type > p {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      /* 페이지네이션 */
+      .pagination {
+        display: flex;
+        gap: 1.4rem;
+        justify-content: center;
+        align-items: center;
+      }
+      .pagination-number {
+        display: flex;
+        gap: 1.2rem;
+        color: lightgray;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.8rem;
+      }
+      .pagination-number > li > a {
+        color: lightgray;
+        font-weight: 400;
+        font-size: 1rem;
+      }
+      .selected-page {
+        padding: 5px 10px;
+        border: 0;
+        border-radius: 6px;
+        font-weight: bold;
+        background-color: #000;
+        color: white;
+      }
+      .ul-flex-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 6rem;
+      }
+      .ul-flex-col > li {
+        font-size: 1.9rem;
+        font-weight: bold;
+      }
+      .ul-flex-col > li > ul > li {
+        font-size: 1.4rem;
+        font-weight: 500;
+      }
+      .li-flex {
+        display: flex;
+        gap: 5rem;
+      }
+      .text-p,
+      .text-span {
+        font-size: 0.95rem;
+        margin-top: 0.3rem;
+        font-weight: 400;
+        text-align: left;
+      }
+      .disc {
+        position: relative;
+      }
+      .disc::before {
+        content: '.';
+        line-height: 24px;
+        margin-right: -60px;
+      }
+      .disc::after {
+        content: '';
+        position: absolute;
+        left: 3px;
+        top: 20px;
+        bottom: -7.3rem;
+        width: 3px;
+        background: #000;
+        opacity: 0.1;
+      }
+      .disc:last-child::after {
+        display: none;
+      }
+
+      /* 공용 */
+      .rounded {
+        border-radius: 24px;
+        border: 1;
+        overflow: hidden;
+      }
+      .rounded-none {
+        border-radius: 0;
+      }
+      .btn-download {
+        background-color: #c30b09;
+        color: #fff;
+        padding: 1.4rem 2.4rem;
+        text-align: center;
+        border: 1;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+      .flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .mt-2 {
+        margin-top: 2rem;
+      }
+      .mb-2 {
+        margin-bottom: 2rem;
+      }
+      .mb-4 {
+        margin-bottom: 4rem;
+      }
+      .pr-4 {
+        padding-right: 4rem;
+      }
+      .bg-none {
+        background-color: transparent;
+      }
+    </style>
+    <!-- icons -->
+    <script
+      src="https://kit.fontawesome.com/ce664c6afc.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div>
+        <img class="logo" src="/src/images/logo_w_H1_m.png" alt="로고" />
+      </div>
+      <ul class="menu">
+        <li><a href="#">2025 서울빛초롱축제</a></li>
+        <li><a href="#">2025 광화문 마켓</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">아카이브</a></li>
+      </ul>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="page-header">
+          <div class="page-header__breadcrumb">
+            <span>Home</span>
+            <span class="bar"></span>
+            <span>아카이브</span>
+            <span class="bar"></span>
+            <span>역대 사진</span>
+          </div>
+          <div class="page-header__title">
+            <p>아카이브</p>
+          </div>
+        </div>
+      </section>
+      <section class="section-premier">
+        <div class="search-wrap">
+          <select class="select-style" name="">
+            <option class="" value="">제목</option>
+            <option value="">내용</option>
+            <option value="">제목+내용</option>
+            <option value="">회원아이디</option>
+            <option value="">회원아이디(코)</option>
+            <option value="">글쓴이</option>
+            <option value="">글쓴이(코)</option>
+          </select>
+          <input
+            class="search-input"
+            type="text"
+            placeholder="검색어를 입력해주세요"
+          />
+        </div>
+
+        <div>
+          <ul class="tab-menu">
+            <li><a href="#">전체</a></li>
+            <li><a href="#">서울빛초롱축제</a></li>
+            <li><a href="#">광화문마켓</a></li>
+          </ul>
+        </div>
+
+        <select class="select-style bg-none rounded-none year" name="">
+          <option class="" value="">연도</option>
+          <option value="">2009</option>
+          <option value="">2010</option>
+          <option value="">2011</option>
+          <option value="">2012</option>
+          <option value="">2013</option>
+          <option value="">2014</option>
+          <option value="">2015</option>
+          <option value="">2016</option>
+          <option value="">2017</option>
+          <option value="">2018</option>
+          <option value="">2019</option>
+          <option value="">2020</option>
+          <option value="">2021</option>
+          <option value="">2022</option>
+          <option value="">2023</option>
+          <option value="">2024</option>
+          <option value="">2025</option>
+          <option value="">2026</option>
+        </select>
+
+        <article class="gallery">
+          <div class="item">
+            <div>
+              <img
+                src="https://www.stolantern.com/data/file/m04_03/thumb-2073034563_MPm5JG16_f0d853cfe466bbab2cc80ed55857bca643fecf43_380x280.png"
+                alt="2024 서울빛초롱축제, '소울 랜턴 캔버스'"
+              />
+            </div>
+            <div>
+              <p>2024 서울빛초롱축제, '소울 랜턴 캔버스'</p>
+            </div>
+          </div>
+          <div class="item">
+            <div>
+              <img
+                src="https://www.stolantern.com/data/file/m04_03/thumb-2073034563_XgCNB8My_e689b8caa3fa55886d89a4f95d1c47072139f601_380x280.png"
+                alt="2024 서울빛초롱축제, '산대희'"
+              />
+            </div>
+            <div>
+              <p>2024 서울빛초롱축제, '산대희'</p>
+            </div>
+          </div>
+          <div class="item">
+            <div>
+              <img
+                src="https://www.stolantern.com/data/file/m04_03/thumb-2073034563_xNB1Q8vU_0eae86ac4f28113c40094d091fe73be148b933f4_380x280.png"
+                alt="2024 서울빛초롱축제, '청계천에 세워진 광화문'"
+              />
+            </div>
+            <div>
+              <p>2024 서울빛초롱축제, '청계천에 세워진 광화문'</p>
+            </div>
+          </div>
+          <div class="item">
+            <div>
+              <img
+                src="https://www.stolantern.com/data/file/m04_03/thumb-2073034563_xNB1Q8vU_0eae86ac4f28113c40094d091fe73be148b933f4_380x280.png"
+                alt="2024 서울빛초롱축제, '어가행렬'"
+              />
+            </div>
+            <div>
+              <p>2024 서울빛초롱축제, '어가행렬'</p>
+            </div>
+          </div>
+          <div class="item">
+            <div>
+              <img
+                src="https://www.stolantern.com/data/file/m04_03/thumb-2073034563_xNB1Q8vU_0eae86ac4f28113c40094d091fe73be148b933f4_380x280.png"
+                alt="2024 서울빛초롱축제, 'Wonderland - Fall on love(이사라 작가)'"
+              />
+            </div>
+            <div>
+              <p>
+                2024 서울빛초롱축제, 'Wonderland - Fall on love(이사라 작가)'
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <div>
+              <img
+                src="https://www.stolantern.com/data/file/m04_03/thumb-2073034563_xNB1Q8vU_0eae86ac4f28113c40094d091fe73be148b933f4_380x280.png"
+                alt="2024 서울빛초롱축제, '에펠탑'"
+              />
+            </div>
+            <div>
+              <p>2024 서울빛초롱축제, '에펠탑'</p>
+            </div>
+          </div>
+        </article>
+        <!-- pagination -->
+        <div class="pagination">
+          <i class="fas fa-angle-left"></i>
+          <ul class="pagination-number">
+            <li class="selected-page"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+            <i class="fa-solid fa-ellipsis"></i>
+          </ul>
+          <i class="fas fa-angle-right"></i>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>
