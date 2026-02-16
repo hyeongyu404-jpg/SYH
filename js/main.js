@@ -1,4 +1,4 @@
-//섹션 01 자바스크립트로 함
+//섹션 01 스와이퍼 말고 자바스크립트로 함
 (() => {
 	const hero = document.querySelector("#hero");
 	const slides = hero.querySelectorAll(".hero_slide");
@@ -8,35 +8,81 @@
 	const total = slides.length;
 
 	const interval = 6000;
-	let timer;
+	let timer = null;
 
-	function show(i){
-		index = (i + total) % total;
+	function restartZoom(target){
+		target.classList.remove("is-zoom");
+		void target.offsetWidth; // reflow (애니메이션 리셋)
+		target.classList.add("is-zoom");
+	}
 
-		slides.forEach((s, idx)=>{
-			s.classList.toggle("is-active", idx === index);
-		});
-
-		dots.forEach((d, idx)=>{
-			d.classList.toggle("is-active", idx === index);
-		});
+	function stop(){
+		if(timer) clearInterval(timer);
+		timer = null;
 	}
 
 	function start(){
-		timer = setInterval(()=>{
+		stop();
+		timer = setInterval(() => {
 			show(index + 1);
 		}, interval);
 	}
 
-	dots.forEach(dot=>{
-		dot.addEventListener("click", ()=>{
+	function show(nextIndex){
+		const prevIndex = index;
+		index = (nextIndex + total) % total;
+
+		const prev = slides[prevIndex];
+		const next = slides[index];
+
+		// dots active
+		dots.forEach((d, idx) => d.classList.toggle("is-active", idx === index));
+
+		// 전환 준비 단계: transition 잠깐 OFF
+		hero.classList.add("is-setting");
+
+		// 초기화
+		slides.forEach(s => s.classList.remove("is-active", "is-prev", "is-next", "is-zoom"));
+
+		// prev는 화면(0), next는 오른쪽(+100) 대기
+		prev.classList.add("is-active");
+		next.classList.add("is-next");
+
+		// 상태 확정(reflow)
+		void hero.offsetWidth;
+
+		// transition ON
+		hero.classList.remove("is-setting");
+
+		// 다음 화면에 이동 시작
+		requestAnimationFrame(() => {
+			prev.classList.remove("is-active");
+			prev.classList.add("is-prev");   // 왼쪽으로 나감
+
+			next.classList.remove("is-next");
+			next.classList.add("is-active"); // 오른쪽에서 들어옴
+
+			// 줌 재시작
+			restartZoom(next);
+		});
+	}
+
+	// dot click
+	dots.forEach(dot => {
+		dot.addEventListener("click", () => {
 			show(Number(dot.dataset.index));
+			start(); // 클릭 후 타이머 리셋
 		});
 	});
 
-	show(0);
+	// 첫 시작
+	slides.forEach(s => s.classList.remove("is-active", "is-prev", "is-next", "is-zoom"));
+	slides[0].classList.add("is-active");
+	restartZoom(slides[0]);
 	start();
 })();
+
+
 
 // 섹션 main structure 스와이퍼 말고 자바스크립트로 함
 const data = {
@@ -172,7 +218,8 @@ const data = {
 
 			setTab(1);
 		});
-// 섹션 social media
+
+// 섹션 social media (스와이퍼 사용)
 const SOCIAL_DATA = [
 	[
 		{ img: "./img/apms/title/260119_빛초롱_종료.png"},
@@ -269,7 +316,7 @@ socialTabs.forEach((tab) => {
 });
 
 
-// 섹션 archive
+// 섹션 archive (스와이퍼 사용)
 const ARCHIVE_DATA = [
 			[
 				{ img: "./img/S-main/thumb01.png", label: "서울빛초롱축제", txt: "2025 서울빛초롱축제, 팔마" },

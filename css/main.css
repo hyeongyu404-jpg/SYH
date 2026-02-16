@@ -1,4 +1,4 @@
-/* 섹션 히어로  */
+/* 섹션 히어로 */
 .hero{
 	position: relative;
 	height: 100vh;
@@ -8,35 +8,61 @@
 .hero_slide{
 	position: absolute;
 	inset: 0;
+	transform: translateX(100%);
+	transition: transform 800ms ease;
+	will-change: transform;
+	overflow: hidden;
+}
 
+/* 배경 이미지 before로 함 */
+.hero_slide::before{
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-image: var(--bg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 
-	opacity: 0;
-	transition: opacity 800ms ease;
+	transform: scale(1.12); 
 }
 
 .hero_slide:nth-child(1){
-	background-image: url('/img/S-main/hero01.png');
+	--bg: url('/img/S-main/hero01.png');
 }
-
 .hero_slide:nth-child(2){
-	background-image: url('/img/S-main/hero01.png');
+	--bg: url('/img/S-main/hero02.png');
 }
 
+/* 현재 화면 */
 .hero_slide.is-active{
-	opacity: 1;
+	transform: translateX(0);
+	z-index: 2;
 }
 
-/* 확대 */
-.hero_slide.is-active.is-zoom{
-	animation: zoom 6s linear forwards;
+/* 이전은 왼쪽으로 나가고*/
+.hero_slide.is-prev{
+	transform: translateX(-100%);
+	z-index: 1;
 }
 
-@keyframes zoom{
-	from { transform: scale(1); }
-	to { transform: scale(1.12); }
+/* 다음꺼는 오른쪽에서 대기한다*/
+.hero_slide.is-next{
+	transform: translateX(100%);
+	z-index: 1;
+}
+
+/* 줌 */
+.hero_slide.is-zoom::before{
+	animation: zoomOut 6s linear forwards;
+}
+.hero.is-setting .hero_slide{
+	transition: none;
+}
+
+@keyframes zoomOut{
+	from { transform: scale(1.12); }
+	to { transform: scale(1); }
 }
 
 
