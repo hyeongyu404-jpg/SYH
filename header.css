@@ -1,0 +1,545 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+body{
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+li{list-style: none;}
+img{max-width: 100%; vertical-align: top;}
+
+/* 시작 */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    height: 95px;
+
+
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s ease;
+
+    background-color: transparent;
+
+}
+
+    .header:hover{
+        background-color: #efe9e1;
+    }
+
+    .header:hover .header_wrap,
+    .header:hover .nav,
+    .header:hover .nav_menus,
+    .header:hover .icon_wrap{
+        background-color: #efe9e1;
+    }
+
+    /* 헤더 호버 시 생기는 얇은 회색선 */
+    .header::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        
+        height: 0.5px;
+        /* 하이를 줘서 top을 쓰면 안된다 */
+        background-color: rgb(175, 172, 174);
+        /* 면적차지해야 돼서 백그라운드컬러로 */
+        display: none;
+
+        z-index: 1;
+    }
+
+        .header:hover::after{
+            display: block;
+        }
+
+/* ------------------------------------------------------------ */
+    /* 헤더 안에 큰 틀 */
+    .header_wrap{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: transparent;
+        width: 100%;
+        padding: 0 50px;
+
+    }
+
+        /* 헤더 왼쪽 로고 */
+        .header_logo{
+            flex: 0 0 auto; /* 0 1 0 으로 자리 먹기  */
+        }
+        .header_logo img{
+            height: 35px;
+        }
+
+        .logo_default{
+            display: block;
+        }
+        .logo_hover{
+            display: none;
+        }
+
+        .header:hover .logo_default{
+            display: none;
+        }
+        .header:hover .logo_hover{
+            display: block;
+        }
+ /* ----------------------------------------------------- */
+        /* 메뉴스의 nav */
+        .nav{
+            background-color: transparent;
+            flex: 1; /* 0 1 0 으로 자리 먹기  */
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            margin-right: 90px;
+
+            position: relative;
+        }
+        /* 배경바 */
+            .nav::after{
+                content: "";
+                position: fixed;
+                left: 0;
+                top: 95px;
+                width: 100%;
+                height: 70px;
+                /* background-color: aqua; */
+                background-color: #efe9e1;
+
+                opacity: 0;
+                visibility: hidden;
+
+                z-index: 5;
+            }
+                .nav:has(.nav_menus:hover)::after{
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+            .nav_inner{
+                display: flex;
+                align-items: center;
+                gap: 80px;
+            }
+                /* -------------------------------------------------- */
+                .nav_menus{
+                    position: relative; /* 밑에 스케일 선 기준 잡기 */
+                    height: 95px;
+                    background-color: transparent;
+                    display: flex;
+                    align-items: center;
+                }
+                    .nav_menus::after{
+                        position: absolute;
+                        content: "";
+
+                        left: 0;
+                        right: 0;
+                        bottom: 0; /* bottom 을 해줘야 바닥에 붙는다. */
+
+                        background-color: #db6033;
+                        height: 1px;
+
+                        transform: scaleX(0);
+                        transform-origin: center;
+                        transition: transform 0.2s ease;
+
+                        z-index: 2;
+                    }
+                        .nav_menus:hover::after{
+                            transform: scaleX(1);
+                        }
+                
+                .nav_inner>li>a{
+                    display: inline-block;
+                    text-decoration: none;
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: #fafafa;
+                    transition: color 0.2s ease;
+                }
+                /* -------------------------------------------------- */
+                    /* 서브메뉴 */
+                    .nav_submenu{
+                        position: absolute;
+                        top: 95px;
+                        
+                        left: 50%;
+                        transform: translateX(-50%);
+
+
+
+                        height: 70px;
+
+                        opacity: 0;
+                        visibility: hidden;
+
+                        z-index: 6;
+
+                    }
+                        .nav_menus:hover .nav_submenu{
+                            opacity: 1;
+                            visibility: visible;
+                        }
+
+                        /* 서브메뉴 이너 */
+                        .submenu_inner{
+                            display: flex;
+                            align-items: center;
+                            gap: 90px;
+                            height: 70px;
+                            background-color: transparent;
+                            
+                        }
+                            .submenu_inner>li>a{
+                                text-decoration: none;
+                                display: inline-block;
+                                align-items: center;
+                                white-space: nowrap;
+                                color: #796655;
+                                font-size: 18px;
+                                font-weight: 600;
+
+                                position: relative;
+                            }
+
+                            .submenu_inner>li>a::after{
+                                content: "";
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                bottom: -20%;
+                                height: 1px;
+                                background-color: #a39182;
+
+                                transform: scaleX(0);
+                                transform-origin: center; 
+                                transition: transform 0.2s ease;
+                            }
+
+                            .submenu_inner>li>a:hover::after{
+                                transform: scaleX(1);
+                            }
+
+/* -------------------------------------------------- */
+        /* 아이콘 */
+        .icon_wrap{
+            /* background-color: blueviolet; */
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex: 0 0 auto; /* 0 1 0 으로 자리 먹기  */
+
+            position: relative;
+        }
+            .icon_btn{
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+            }
+            /*글로버버튼------------------------------------------------*/
+            .lang_ul{
+                position: absolute;
+                top: 31px;
+                left: -16px;
+                background-color: #fafafa;
+                border-radius: 10px;
+                padding: 7px;
+
+                width: 70px;
+                height: 105px;
+
+                display: none;
+                flex-direction: column;
+                gap: 8px;
+                z-index: 7;
+            }
+                /* 자바에서 토글해서 조작 */
+                    .lang_ul.open{
+                        display: flex;
+                    }
+                    .lang_ul>li>a{
+                    font-size: 15px;
+                    font-weight: 800;
+                    text-decoration: none;
+                    color: #796655;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    height: 42px;
+                    border-radius: 10px;
+                    
+                    }
+                        .lang_ul>li>a.active{
+                            background-color: #efe9e1;
+                        }
+                        .lang_ul>li>a:hover{
+                            background-color: #efe9e1;
+                        }
+            /* ------------------------------------------ */
+                .icon_btn img {
+                    width: 30px;
+                    height: 30px;
+                    display: block;
+                    filter: brightness(0) invert(1);
+                    transition: filter 0.2s ease;
+                }
+                .icon_btn svg{
+                transition: stroke 0.2s ease; 
+                margin-left: 20px;
+                }
+        
+            /* 서치버튼------------------------- */
+            .search_bar{
+                position: fixed;
+                background: #efe9e1;
+                width: 100%;
+                top: 0;
+                left: 0;
+                z-index: 999;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 250px;
+
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.25s ease;
+            }
+            .search_bar.show{
+                opacity: 1;
+                visibility: visible;
+            }
+                .search_wrap{
+                    /* background-color: skyblue; */
+                    width: 900px;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .search_input{
+                    width: 400px;
+                    /* background-color: tomato; */
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-bottom: 2px solid #7a6455;
+                }
+                    .search_input input{
+                        background-color: transparent;
+                        border: none;
+                        font-size: 16px;
+                        margin: 10px 3px;
+                        outline: none;
+                    }
+
+                    .search_btn{
+                        width: 20px;
+                        height: 20px;
+                        cursor: pointer;
+                    }
+                .popular_keyword{
+                    /* background-color: purple; */
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 50px;
+                    margin: 27px 10px;
+                }
+                .popular_keyword h4{
+                    color: #5c4b3b;
+                }
+                    .rank_ul{
+                        /* background-color: greenyellow; */
+                        display: flex;
+                        justify-items: end;
+                        gap: 10px;
+                    }
+                        .rank_li>a{
+                            text-decoration: none;
+                            border: 1px solid #796655;
+                            border-radius: 25px;
+                            padding: 10px;
+                            font-size: 15px;
+                            display: inline-block;
+                            min-width: 100px;
+                            text-align: center;
+                            color: #5c4b3b;
+                        }
+
+                .search_close{
+                    position: absolute;
+                    top: 20px;
+                    right: 30px;
+                    filter: invert(24%) sepia(8%) saturate(420%) hue-rotate(5deg) brightness(10%) contrast(105%);
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                }
+                    .search_close img{
+                        display: block;
+                        width: 18px;
+                        height: 18px;
+                    }
+
+        /* --------------------------------------------------- */
+        /* 햄버거 메뉴 페이지 */
+        .hambutton_page{
+            /* background-color: pink; */
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100vh;
+
+            z-index: 9999;
+
+                --x: 100%;
+                --y: 0%;
+
+                /* 처음은 점 */
+                clip-path: circle(0px at var(--x) var(--y));
+
+                
+                transition: clip-path 1s cubic-bezier(.2,.8,.2,1);
+
+                visibility: hidden;
+                pointer-events: none;
+            }
+
+            /* 열림 */
+            .hambutton_page.active{
+                clip-path: circle(150vmax at var(--x) var(--y));
+                visibility: visible;
+                pointer-events: auto;
+            }
+
+            .mns_wrap{
+                background-color: #efe9e1;
+                width: 100%;
+                height: 100%;
+
+                padding: 20px 60px;
+                box-sizing: border-box;
+                /* ? */
+            }
+            /* -----top_logo 상단 */
+                .top_logo_wrap{
+                    /* background-color: tomato; */
+                    background-color: transparent;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 20px;
+                }
+                        .top_logo img{
+                            height: 40px;
+                            filter: contrast(110%) saturate(110%);
+                        } 
+                    .hambutton_close{
+                        background-color: transparent;
+                        border: none;
+                        cursor: pointer;
+                    }
+                        .hambutton_close img{
+                            width: 30px;
+                            height: 30px;
+                            
+                            transition: transform 0.4s ease;
+                        }
+                        .hambutton_close img:hover{
+                            transform: rotate(180deg);
+                        }
+            /* ----hambutton_menu_inner 하단 */
+            .hambutton_menu_inner{
+                margin-top: 200px;
+            }
+                .hambutton_menus_ul{
+                    background-color: #efe9e1;
+                    padding: 50px 170px;
+                }
+                    .hambutton_menus_li{
+                        /* background-color: tomato; */
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-bottom: 0.8px solid rgb(167, 165, 165);
+                        padding: 30px 0;
+                    }
+                        .hambutton_menus_li>a{
+                            font-size: 50px;
+                            font-weight: 800;
+                            text-decoration: none;
+                            color: #796655;
+                        }
+                        .hambutton_menus_li>a:hover{
+                            color: #b83218;
+                        }
+                            .ham_menus_sub{
+                                background-color: #efe9e1;
+                            }
+                                .ham_menus_sub_ul{
+                                    display: flex;
+                                    /* background-color: pink; */
+                                }
+
+                                .ham_menus_sub_li:not(:first-child)::before{
+                                    content: "/";
+                                    display: inline-block;
+                                    margin: 0 10px;
+                                    color:#8c7766;
+                                    font-size: 20px;
+                                }
+                                    .ham_menus_sub_li>a{
+                                        text-decoration: none;
+                                        font-size: 20px;
+                                        color:#8c7766;
+                                        font-weight: 650;
+
+                                        position: relative;
+                                        display: inline-block;
+                                    }
+                                    .ham_menus_sub_li>a::after{
+                                        content: "";
+                                        position: absolute;
+                                        left: 0;
+                                        right: 0;
+                                        bottom: -7px;
+                                        height: 1px;
+                                        
+                                        background-color: #7a6455;
+
+                                        transform: scaleX(0);
+                                        /* 하이를 2로 주면 여기가 터진다
+                                        그럴때는 scale 말고 translateX(-50%)주고
+                                        호버 후 위드로 준다.... */
+                                        transform-origin: center;
+                                        transition: transform 0.3s ease;
+                                    }
+                                    .ham_menus_sub_li>a:hover::after{
+                                        transform: scaleX(1);
+                                    }
+        /* --------------------------------------------------- */
+        /* 헤더 전체영역 호버 */
+        .header:hover .nav_inner > li > a{
+            color: #796655;
+        }
+
+        .header:hover .icon_btn img{
+            filter: sepia(1) saturate(400%) hue-rotate(330deg) brightness(0.6);
+        }
+
+        .header:hover .icon_btn svg{
+            stroke: #5c4b3b;
+        }
