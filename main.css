@@ -428,7 +428,7 @@
 
 /* 배경 ------------------------------------------- */
 .bcg03 {
-	background: url(/img/S-main/mainbg_03.png) no-repeat bottom / cover;
+	background: url(./img/S-main/mainbg_03.png) no-repeat bottom / cover;
 	height: 350px;
 }
 /* 섹션 socialmedia */
@@ -642,7 +642,7 @@
 
 /* 배경 ------------------------------------------- */
 .bcg04 {
-	background: url(/img/S-main/mainbg_04.png) no-repeat top / cover;
+	background: url(./img/S-main/mainbg_04.png) no-repeat top / cover;
 	height: 350px;
 }
 
