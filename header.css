@@ -13,14 +13,10 @@ img{max-width: 100%; vertical-align: top;}
     width: 100%;
     z-index: 9999;
     height: 95px;
-
-
     display: flex;
     align-items: center;
     transition: background-color 0.2s ease;
-
     background-color: transparent;
-
 }
 
     .header:hover{
