@@ -6,27 +6,37 @@
 
   if (!stage || !yearEl || !prevBtn || !nextBtn) return;
 
+  // 이미지 파일 리스트를 기반으로 경로와 이름을 정확히 매칭했습니다.
   const historyData = [
     { year: 2024, image: "./src/img/s4/2024빛초롱_수정.png" },
     { year: 2023, image: "./src/img/s4/2023빛초롱.png" },
     { year: 2022, image: "./src/img/s4/2022빛초롱.png" },
     { year: 2021, image: "./src/img/s4/2021빛초롱.png" },
     { year: 2020, image: "./src/img/s4/2020빛초롱.png" },
-    { year: 2014, image: "./src/img/s4/2014빛초롱.png" } // 캡처본에 있는 2014년 예시
+    { year: 2019, image: "./src/img/s4/2019빛초롱.png" },
+    { year: 2018, image: "./src/img/s4/2018빛초롱.png" },
+    { year: 2017, image: "./src/img/s4/2017빛초롱.png" },
+    { year: 2016, image: "./src/img/s4/2016빛초롱.png" },
+    { year: 2015, image: "./src/img/s4/2015빛초롱.png" },
+    { year: 2014, image: "./src/img/s4/2014빛초롱.png" },
+    { year: 2013, image: "./src/img/s4/2013빛초롱.png" },
+    { year: 2012, image: "./src/img/s4/2012빛초롱.png" },
+    { year: 2011, image: "./src/img/s4/2011빛초롱.png" },
+    { year: 2010, image: "./src/img/s4/2010빛초롱.png" },
+    { year: 2009, image: "./src/img/s4/2009빛초롱.png" }
   ];
 
   let currentIndex = 0;
   let isAnimating = false;
-  const DURATION = 800;
+  const DURATION = 600;
 
   function createSlide(item, className = "") {
     const slide = document.createElement("div");
     slide.className = `history-slide ${className}`.trim();
 
-    // 사진처럼 흰색 박스 안에 이미지 하나만 들어가는 구조
     const img = document.createElement("img");
     img.src = item.image;
-    img.alt = `${item.year} 행사 연혁`;
+    img.alt = `${item.year} 연혁 이미지`;
 
     slide.appendChild(img);
     return slide;
@@ -43,7 +53,7 @@
     stage.innerHTML = "";
     const firstSlide = createSlide(historyData[currentIndex], "active");
     stage.appendChild(firstSlide);
-    yearEl.textContent = historyData[currentIndex].year;
+    updateYear(currentIndex);
   }
 
   function moveSlide(direction) {
