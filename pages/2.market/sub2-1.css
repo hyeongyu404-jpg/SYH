@@ -156,10 +156,10 @@
 
 .slider-btn{
     position: absolute;
-    top: 50%;
+    top: 25%;
     transform: translateY(-50%);
     width: 80px;
-    height: 80px;
+    height: 70px;
     border: none;
     border-radius: 50%;
     background: transparent;
