@@ -1,0 +1,271 @@
+/* ==========================================================================
+   Hero Section & Container Style Base
+   ========================================================================== */
+.hero{
+    height: 100vh;
+    background-image: url(../2.market/src/img/sub2-1/imgi_115_m04_top.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.container2{
+    width: 80%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.breadcrumb{
+    color: white;
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+.hero-title{
+    font-size: 75px;
+    font-weight: bold;
+    color: white;
+    padding-top: 14px;
+}
+
+/* 서브 페이지 핵심 가로축 제한 컨테이너 크기 */
+.market-container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Section 2: 마켓 둘러보기 / 상단 텍스트 및 메인 배너
+   ========================================================================== */
+.section-market-intro {
+    background-color: #FFFFFF;
+    padding: 60px 0 40px 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: -0.05em;
+}
+
+/* 수정: 원본 사양 1:1 일치 중앙 정렬 및 가로지르는 선 정의 */
+.market-sub-nav {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 60px;
+    /* border-bottom: 1px solid #e5dfd5; */
+    padding: 0;
+    list-style: none;
+}
+
+.sub-nav-item {
+    font-size: 20px;
+    font-weight: 500;
+    color: #8c7e72;
+    padding-bottom: 15px;         /* 글자와 하단 라인 간격 마진 */
+    cursor: pointer;
+    position: relative;
+    top: 1px;                     /* border-bottom 경계선과 오차 없이 겹치도록 배치 */
+    transition: all 0.15s ease-in-out;
+}
+
+/* 수정: 활성화(Active) 시 노출되는 브라운 컬러 언더라인 스펙 */
+.sub-nav-item.active {
+    font-weight: 700;
+    color: #413022;               /* 원본과 일치하는 짙은 브라운 색상 */
+    border-bottom: 3px solid #413022;
+}
+
+.sub-nav-item:hover {
+    color: #413022;
+}
+
+.market-section-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #413022;
+    text-align: center;
+    margin: 0 0 15px 0;
+}
+
+.market-theme-subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: #6d6156;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.market-main-graphic {
+    width: 100%;
+    text-align: center;
+}
+
+.market-main-graphic img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Section 3: 배치도 및 구역별 탭 (수정 완료)
+   ========================================================================== */
+.section-market-layout {
+    background-color: #F3EEE0;
+    padding-top: 20px;
+    padding-bottom: 120px;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: -0.05em;
+}
+
+.market-layout-title-banner {
+    width: 100%;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.market-layout-title-banner img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* [위치 수정] 지도 위쪽 알약 모양 탭 메뉴 */
+.market-zone-tabs {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 45px auto;
+    gap: 15px;
+    max-width: 800px;
+}
+
+.zone-tab-btn {
+    font-size: 18px;
+    font-weight: 500;
+    color: #413022;
+    text-align: center;
+    padding: 14px 0;
+    width: 155px;
+    cursor: pointer;
+    background-color: #ffffff;
+    border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease-in-out;
+}
+
+.zone-tab-btn:hover {
+    background-color: #f7f3eb;
+}
+
+/* 활성화 시 레드 배경 반전 명세 일치 */
+.zone-tab-btn.active {
+    font-weight: 700;
+    color: #ffffff !important;
+    background-color: #b91c1c;
+    box-shadow: 0 4px 12px rgba(185, 28, 28, 0.15);
+}
+
+/* 지도 그래픽 영역 */
+.market-map-graphic {
+    width: 100%;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.market-map-graphic img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* -----------------------------------------
+   [디자인 전면 수정] 독립 링크 버튼 (참여상인/파트너 등 알약 모양 스타일)
+----------------------------------------- */
+.market-link-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.market-lnk-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #413022;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #e2dad0;
+    border-radius: 50px;          /* 각진 라운딩에서 완전한 알약 형태로 변경 */
+    padding: 15px 0;
+    width: 240px;                 /* 균등 폭 할당 정렬 */
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: all 0.2s ease-in-out;
+}
+
+/* 아웃링크 새창 열기 전용 아이콘 추가 생성 */
+.market-lnk-btn::after {
+    content: '⧉';
+    font-size: 14px;
+    margin-left: 8px;
+    display: inline-block;
+    color: #8c7e72;
+    transition: color 0.2s ease-in-out;
+}
+
+/* 호버 시 배경 레드, 글자 및 내부 아이콘 화이트 처리 반전 명세 적용 */
+.market-lnk-btn:hover {
+    background-color: #b91c1c;
+    color: #ffffff;
+    border-color: #b91c1c;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(185, 28, 28, 0.15);
+}
+
+.market-lnk-btn:hover::after {
+    color: #ffffff;
+}
+
+/* -----------------------------------------
+   구역 리스트 패널 가시성 스위칭
+----------------------------------------- */
+.market-zone-content-wrap {
+    width: 100%;
+}
+
+.zone-panel {
+    display: none;
+    width: 100%;
+}
+
+.zone-panel.active {
+    display: block;
+    animation: fadeInZone 0.35s ease-in-out;
+}
+
+.panel-img-box {
+    width: 100%;
+    text-align: center;
+}
+
+.panel-img-box img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@keyframes fadeInZone {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}

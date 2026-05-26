@@ -1,0 +1,39 @@
+.hero{
+    height: 100vh;
+    background-image: url(./src/img/s1_bg.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    width: 80%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.breadcrumb{
+    color: white;
+    margin-bottom: 20px;
+    font-size: 17px;
+
+}
+.hero-title{
+    font-size: 75px;
+    font-weight: bold;
+    color: white;
+    padding-top: 14px ;
+}
+.img-container {
+    display: flex;
+    justify-content: center; /* 가로 가운데 정렬 */
+    align-items: center;     /* 세로 가운데 정렬 */
+    width: 100%;             /* 부모가 전체 폭을 차지하도록 보장 */
+}
+
+.imgbox {
+    /* 이미지가 너무 크다면 부모 너비를 넘지 않도록 안전장치 추가 */
+    max-width: 100%; 
+    height: auto;
+}

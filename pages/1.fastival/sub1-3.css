@@ -1,0 +1,282 @@
+.hero{
+    height: 100vh;
+    background-image: url(./src/img/s1_bg.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    width: 80%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.breadcrumb{
+    color: white;
+    margin-bottom: 20px;
+    font-size: 17px;
+
+}
+.hero-title{
+    font-size: 75px;
+    font-weight: bold;
+    color: white;
+    padding-top: 14px ;
+}
+
+.festival-intro, .zone-intro {
+    padding: 100px 0;
+    background-color: #faf9f6; /* 전체적으로 따뜻하고 미니멀한 아이보리 톤 배경 */
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #333;
+}
+
+.section-main-title {
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    color: #4a3b32;
+    margin-bottom: 60px;
+}
+
+/* sec2 */
+/* 섹션 전체 레이아웃 고유 영역 */
+.section-theme-points {
+    background-color: #fcf9f2;    /* 공식 사이트 메인 바탕 미색 */
+    padding-top: 110px;           /* 상단 여백 실측 반영 */
+    padding-bottom: 120px;        /* 하단 카드 아래 여백 실측 반영 */
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: -0.05em;      /* 오리지널 사이트의 자간 기본 압축값 */
+}
+
+/* 100% 매칭을 위한 콘텐츠 가로 최대 너비 제한 (1320px 폭 일치) */
+.theme-container {
+    width: 80%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* 메인 타이틀: 공식 크기 56px 적용 */
+.theme-main-title {
+    font-size: 56px;
+    font-weight: 700;
+    color: #413022;               /* 정밀 추출 브라운 타이틀 컬러 */
+    text-align: center;
+    line-height: 1.2;
+    margin: 0 0 75px 0;           /* 아래쪽 마진값 고정 */
+}
+
+/* 상단 정보 박스 레이아웃 패딩 */
+.theme-info-box {
+    max-width: 1200px;
+    margin: 0 auto 95px auto;    /* 다음 제목과의 간격 매칭 */
+}
+
+.info-row-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.info-row-item:last-child {
+    margin-bottom: 0;
+}
+
+/* '주제', '슬로건' 글자 영역 및 컬러 */
+.info-label-cell {
+    font-size: 32px;
+    font-weight: 700;
+    color: #413022;
+    min-width: 175px;             /* 텍스트 시작 라인을 맞추기 위한 고정폭 */
+    display: flex;
+    align-items: center;
+}
+
+/* 제목 왼쪽 핑크/레드 계열 별 아이콘 */
+.icon-star {
+    color: #e26353;               /* 정확한 핑크레드 아이콘 컬러 */
+    font-size: 32px;
+    margin-right: 14px;
+    line-height: 1;
+}
+
+/* 오른편 내용 서체 사양 */
+.info-value-cell {
+    font-size: 22px;
+    font-weight: 400;
+    color: #6d6156;               /* 서브 본문용 브라운 그레이 */
+    line-height: 1.4;
+}
+
+/* 서브 타이틀: 공식 크기 28px 적용 */
+.theme-sub-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #413022;
+    margin: 0 0 45px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* 소제목 앞 다이아몬드 아이콘 */
+.icon-diamond {
+    color: #386a63;               /* 딥그린 컬러 코드 적용 */
+    font-size: 32px;
+    margin-right: 14px;
+    position: relative;
+    top: -1px;
+}
+
+/* 관람 포인트 카드 리스트 그리드 레이아웃 (3등분 분할) */
+.points-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;                    /* 카드 사이 간격격 */
+}
+
+/* 카드 개별 요소 내부 박스 */
+.card-item {
+    background-color: #f7f3eb;    /* 카드의 살짝 더 짙은 미색 배경 */
+    border-radius: 20px;          /* 오리지널 둥글기 반경 적용 */
+    padding: 55px 35px 65px 35px; /* 내부 상단/측면/하단 패딩 픽셀 매칭 */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.card-badge-zone {
+    margin-bottom: 35px;
+}
+
+/* Point 배지 스타일 알약 형태 고정 크기 */
+.badge-red {
+    display: inline-block;
+    background-color: #c61c14;    /* 공식 포인트 레드 컬러 적용 */
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 6px 26px;
+    border-radius: 30px;
+    line-height: 1.5;
+}
+
+/* 카드 내 헤드라인 */
+.card-headline {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.45;
+    color: #2f241c;               /* 내부 헤드라인용 다크 브라운 */
+    margin: 0 0 25px 0;
+}
+
+/* 카드 내 설명Paragraph */
+.card-paragraph {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: #7e7369;               /* 카드 본문용 브라운 그레이 */
+    margin: 0;
+}
+
+/* sec3 */
+/* .imgBox{
+    background-color: #fcf9f2;
+    width: 100%;
+    text-align: center;
+} */
+
+img{
+     width: 100%;
+    max-width: 780px;   /* 원본 사이트 기준 너비 - 조정 가능 */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.section-zone-layout {
+    background-color: #F3EEE0;
+    padding: 90px 0 120px 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: -0.05em;
+}
+
+.zone-layout-container {
+    width: 100%;
+    /* max-width: 1320px; */
+    /* margin: 0 auto; */
+    /* padding: 0 20px; */
+    box-sizing: border-box;
+}
+
+/* .zone-layout-title {
+    font-size: 56px;
+    font-weight: 700;
+    color: #413022;
+    text-align: center;
+    margin: 0 0 60px 0;
+    line-height: 1.2;
+} */
+
+.zone-tab-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 65px auto;
+    max-width: 1000px;
+    gap: 15px;
+    background-color: transparent;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    font-size: 18px;
+    font-weight: 500;
+    color: #413022;
+    text-align: center;
+    padding: 14px 0;
+    width: 155px;
+    cursor: pointer;
+    background-color: #ffffff;
+    border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.tab-btn:hover {
+    background-color: #f7f3eb;
+}
+
+.tab-btn.active {
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #b91c1c;
+    box-shadow: 0 4px 12px rgba(185, 28, 28, 0.25);
+}
+
+/* 이미지 영역 */
+.zone-img-box {
+    width: 100%;
+    position: relative;
+}
+
+/* 기본: 숨김 */
+.zone-img {
+    display: none;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+/* active만 표시 */
+.zone-img.active {
+    display: block;
+}
+
