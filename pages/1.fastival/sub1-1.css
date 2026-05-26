@@ -32,6 +32,7 @@
     max-width: 1400px;
     margin: 0 auto;
 }
+
 .festival-img{
     position:relative;
 }
@@ -80,6 +81,7 @@
 } */
 
 /* sec3 */
+
 .social-media{
     padding: 120px 0;
     background: #efebde;
@@ -111,6 +113,8 @@
 .social-slider{
     width: 100%;
     overflow: hidden;
+    overflow: hidden;
+    cursor: grab;
 }
 
 .social-slider.dragging{
@@ -121,6 +125,9 @@
     display: flex;
     gap: 24px;
     align-items: flex-start;
+    user-select: none;
+    will-change: transform;
+    transition: transform 0.35s ease;
 }
 
 .social-slider.dragging .social-track{
@@ -139,6 +146,23 @@
     wwidth: 100%;    /* 카드 너비에 꽉 차게 */
     height: auto;   /* 원본 비율 유지 */
     display: block;
+    flex: 0 0 320px;
+    border-radius: 24px;
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    user-select: none;
+    -webkit-user-drag: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+}
+
+.social-card img{
+    width: 100%;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .slider-btn{
@@ -150,6 +174,11 @@
     border: none;
     border-radius: 50%;
     background: transparent;
+    width: 72px;
+    height: 72px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.95);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -161,6 +190,11 @@
 
 .slider-btn img{
     width: 100px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.slider-btn img{
+    width: px;
     height: auto;
     display: block;
     pointer-events: none;
