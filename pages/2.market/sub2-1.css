@@ -1,4 +1,5 @@
-.hero{
+/* Hero */
+.hero {
     height: 100vh;
     background-image: url(../2.market/src/img/sub2-1/imgi_115_m04_top.png);
     background-size: cover;
@@ -7,30 +8,32 @@
     align-items: center;
 }
 
-.container{
+.container2 {
     width: 80%;
     max-width: 1600px;
     margin: 0 auto;
 }
 
-.breadcrumb{
+.breadcrumb {
     color: white;
     margin-bottom: 20px;
     font-size: 17px;
-
 }
-.hero-title{
+
+.hero-title {
     font-size: 75px;
     font-weight: bold;
     color: white;
-    padding-top: 14px ;
+    padding-top: 14px;
 }
 
-/* sec2 */
-.container2{
-    width: 70%;
-    max-width: 1400px;
+/* 서브 페이지 컨테이너 */
+.market-container {
+    width: 100%;
+    max-width: 1320px;
     margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 .market-img{
     position:relative;
