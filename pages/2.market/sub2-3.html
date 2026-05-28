@@ -6,6 +6,7 @@
     <title>참여상인</title>
     <link rel="stylesheet" href="../../header.css">
     <link rel="stylesheet" href="../../footer.css">
+    <link rel="stylesheet" href="../2.market/sub2-3.css">
 </head>
 <body>
     <header class="header" id="header">
@@ -268,19 +269,437 @@
             
         </div>
     </header>
-    <section class="sub1-1_sec1">
-        <div class="outbox">
-            <span>Home</span>
-            <span>2025 서울빛초롱축제</span>
-            <span>오시는 길</span>    
+  <section class="hero">
+    <div class="container2">
+        <div class="breadcrumb">
+            Home &nbsp;&nbsp; |&nbsp;&nbsp; 2025 광화문 마켓 &nbsp;&nbsp;|&nbsp;&nbsp; 참여상인
         </div>
-        <div class="sec1-1_t">
-            2025 서울빛초롱축제
+        <div class="hero-title" >
+            2025 광화문마켓
         </div>
+    </div>
     </section>
-    <section class="sub1-1_sec2">
-       
-    </section>
+   <section class="merchant-section">
+    <div class="market-container">
+
+        <div class="merchant-search-wrap">
+            <div class="merchant-search">
+                <select class="search-select">
+                    <option>제목</option>
+                    <option>내용</option>
+                    <option>제목+내용</option>
+                </select>
+                <div class="search-input-wrap">
+                    <input type="text" class="search-input" placeholder="검색어를 입력해주세요">
+                    <button class="search-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-sort-row">
+            <ul class="tab-list">
+                <li class="tab-item active" data-filter="all"><a href="#">전체</a></li>
+                <li class="tab-item" data-filter="season1"><a href="#">시즌1</a></li>
+                <li class="tab-item" data-filter="season2"><a href="#">시즌2</a></li>
+                <li class="tab-item" data-filter="season3"><a href="#">시즌3</a></li>
+            </ul>
+            <div class="sort-wrap">
+                <button class="sort-btn" id="sortBtn">
+                    정렬
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <ul class="sort-dropdown" id="sortDropdown">
+                    <li><a href="#">초기화</a></li>
+                    <li><a href="#">날짜순</a></li>
+                    <li><a href="#">조회순</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="merchant-grid" id="merchantGrid">
+
+            <!-- 시즌1 -->
+            <div class="merchant-card" data-season="season1" data-row="1">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season1/1.jpg" alt="시즌1 상인1">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 패션잡화]</span>
+                        <p class="card-name">별빛공방 (Starlight Studio)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season1" data-row="1">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season1/2.png" alt="시즌1 상인2">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 주얼리]</span>
+                        <p class="card-name">달의정원 (Moon Garden)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season1" data-row="1">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season1/3.jpg" alt="시즌1 상인3">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[시즌 공산품: 홈리빙·주방·생활]</span>
+                        <p class="card-name">온기하우스 (Ongi House)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season1" data-row="2">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season1/4.jpg" alt="시즌1 상인4">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 문구]</span>
+                        <p class="card-name">종이나무 (Paper Tree)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season1" data-row="2">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season1/5.png" alt="시즌1 상인5">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 의류]</span>
+                        <p class="card-name">하나실 (Hanasil)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season1" data-row="2">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season1/6.png" alt="시즌1 상인6">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 뷰티]</span>
+                        <p class="card-name">꽃향기 (Flower Scent)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season1" data-row="3">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season1/7.jpg" alt="시즌1 상인7">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[시즌 공산품: 패션잡화]</span>
+                        <p class="card-name">겨울달 (Winter Moon)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season1" data-row="3">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season1/8.png" alt="시즌1 상인8">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 케이스·액세서리]</span>
+                        <p class="card-name">유리공방 (Glass Studio)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season1" data-row="3">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season1/9.jpg" alt="시즌1 상인9">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 패션잡화]</span>
+                        <p class="card-name">봄여울 (Spring Stream)</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 시즌2 -->
+            <div class="merchant-card" data-season="season2" data-row="1">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season2/1.jpg" alt="시즌2 상인1">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 패션잡화]</span>
+                        <p class="card-name">행운요정 (Lucky fairy)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season2" data-row="1">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season2/2.jpg" alt="시즌2 상인2">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 주얼리]</span>
+                        <p class="card-name">나버터트 (Nabotot)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season2" data-row="1">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season2/3.jpg" alt="시즌2 상인3">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[시즌 공산품: 홈리빙·주방·생활]</span>
+                        <p class="card-name">럭키로버 (Lucky Four-Leaf Clover)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season2" data-row="2">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season2/4.jpg" alt="시즌2 상인4">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 문구]</span>
+                        <p class="card-name">바다범 (Bada_Beom)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season2" data-row="2">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season2/5.png" alt="시즌2 상인5">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 패션잡화]</span>
+                        <p class="card-name">엘리옌 (ellieyenn)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season2" data-row="2">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season2/6.png" alt="시즌2 상인6">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 의류]</span>
+                        <p class="card-name">화사한 (hwasahan)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season2" data-row="3">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season2/7.jpg" alt="시즌2 상인7">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 뷰티]</span>
+                        <p class="card-name">디앤나잇 (Dnnite)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season2" data-row="3">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season2/8.jpg" alt="시즌2 상인8">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[시즌 공산품: 패션잡화]</span>
+                        <p class="card-name">아모르윌트 (AmorWert)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season2" data-row="3">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season2/9.jpg" alt="시즌2 상인9">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 케이스·액세서리]</span>
+                        <p class="card-name">다정한 유리 (Kind GLASS)</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 시즌3 -->
+            <div class="merchant-card" data-season="season3" data-row="1">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season3/1.jpg" alt="시즌3 상인1">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 주얼리]</span>
+                        <p class="card-name">은하수방 (Galaxy Workshop)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season3" data-row="1">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season3/2.png" alt="시즌3 상인2">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 문구]</span>
+                        <p class="card-name">초록마당 (Green Yard)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season3" data-row="1">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season3/3.jpg" alt="시즌3 상인3">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[시즌 공산품: 홈리빙·주방·생활]</span>
+                        <p class="card-name">따뜻한날 (Warm Day)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season3" data-row="2">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season3/4.jpg" alt="시즌3 상인4">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 패션잡화]</span>
+                        <p class="card-name">새벽별 (Dawn Star)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season3" data-row="2">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season3/5.jpg" alt="시즌3 상인5">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 의류]</span>
+                        <p class="card-name">솜사탕 (Cotton Candy)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season3" data-row="2">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season3/6.png" alt="시즌3 상인6">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 뷰티]</span>
+                        <p class="card-name">달빛공방 (Moonlight Lab)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season3" data-row="3">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season3/7.jpg" alt="시즌3 상인7">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[시즌 공산품: 패션잡화]</span>
+                        <p class="card-name">한겨울 (Midwinter)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season3" data-row="3">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season3/8.png" alt="시즌3 상인8">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 케이스·액세서리]</span>
+                        <p class="card-name">빛나리 (Shining)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="merchant-card" data-season="season3" data-row="3">
+                <a href="#">
+                    <div class="card-img-wrap">
+                        <span class="card-badge">H</span>
+                        <img src="../2.market/src/img/sub2-3/ season3/9.jpg" alt="시즌3 상인9">
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">[수공예품: 주얼리]</span>
+                        <p class="card-name">노을빛 (Sunset Glow)</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="pagination-wrap">
+            <nav class="pagination">
+                <button class="page-btn prev-btn" disabled>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+                        <path d="M6 1L1 6L6 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <ul class="page-num-list">
+                    <li class="page-num active"><a href="#">1</a></li>
+                </ul>
+                <button class="page-btn next-btn" disabled>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+                        <path d="M1 1L6 6L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+
+    </div>
+</section>
     <footer>
         <div class="footer_wrap">
             <div class="footer_info">
@@ -337,5 +756,5 @@
 </body>
 <script src="../../header.js"></script>
 <script src="../../footer.js"></script>
-
+<script src="../../pages/2.market/sub2-3.js"></script>
 </html>
